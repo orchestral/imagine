@@ -11,7 +11,7 @@ class ImagineManager extends Manager {
 	 */
 	protected function createGdDriver()
 	{
-		return new Imagine\Gd\Imagine;
+		return new \Imagine\Gd\Imagine;
 	}
 
 	/**
@@ -21,7 +21,7 @@ class ImagineManager extends Manager {
 	 */
 	protected function createImagickDriver()
 	{
-		return new Imagine\Imagick\Imagine;
+		return new \Imagine\Imagick\Imagine;
 	}
 
 	/**
@@ -31,7 +31,7 @@ class ImagineManager extends Manager {
 	 */
 	protected function createGmagickDriver()
 	{
-		return new Imagine\Gmagick\Imagine;
+		return new \Imagine\Gmagick\Imagine;
 	}
 
 	/**
