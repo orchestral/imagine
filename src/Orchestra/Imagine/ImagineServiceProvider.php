@@ -25,6 +25,16 @@ class ImagineServiceProvider extends ServiceProvider {
 	}
 
 	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('orchestra/imagine', 'orchestra/imagine');
+	}
+
+	/**
 	 * Get the services provided by the provider.
 	 *
 	 * @return array
