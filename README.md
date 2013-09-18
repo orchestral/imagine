@@ -38,7 +38,7 @@ Add `Imagine` alias in `app/config/app.php`.
 	
 	// ...
 	
-	'Imagine'         => 'Orchestra\Imagine\Facade',
+	'Imagine' => 'Orchestra\Imagine\Facade',
 ),
 ```
 
