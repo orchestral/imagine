@@ -9,7 +9,6 @@ before_script:
   - composer install --prefer-source --no-interaction --dev
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
-  - echo '' > ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
   - sh -c "
               wget http://www.imagemagick.org/download/legacy/ImageMagick-6.8.5-10.tar.gz;
               tar xzf ImageMagick-6.8.5-10.tar.gz;
