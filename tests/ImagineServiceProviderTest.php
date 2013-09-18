@@ -48,7 +48,10 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase {
 		$stub->register();
 		$stub->boot();
 
-		$this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver());	
+		$this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver());
+		$this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver('gd'));
+		$this->assertInstanceOf('\Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver('imagick'));
+		$this->assertInstanceOf('\Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver('gmagick'));
 	}
 
 	/**
