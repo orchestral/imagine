@@ -15,7 +15,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
 	"require": {
-		"orchestra/imagine": "1.0.*@dev"
+		"orchestra/imagine": "1.0.*"
 	}
 }
 ```
