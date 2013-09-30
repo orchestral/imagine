@@ -6,7 +6,8 @@ php:
   - 5.5
 
 before_script:
-  - composer install --prefer-source --no-interaction --dev
+  - composer self-update
+  - composer require satooshi/php-coveralls:~0.6 --prefer-source --no-interaction --dev
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
   - sh -c "
