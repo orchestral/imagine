@@ -1,7 +1,7 @@
 Imagine Package for Laravel 4
 ==============
 
-Orchestra\Imagine is a Laravel 4 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
+`Orchestra\Imagine` is a Laravel 4 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
 [![Latest Stable Version](https://poser.pugx.org/orchestra/imagine/v/stable.png)](https://packagist.org/packages/orchestra/imagine) 
 [![Total Downloads](https://poser.pugx.org/orchestra/imagine/downloads.png)](https://packagist.org/packages/orchestra/imagine) 

@@ -5,6 +5,7 @@ vendor/*
 # Code Coverage
 build/code-browser/*
 build/coverage/*
+build/docs/*
 build/logs/*
 build/pdepend/*
 !build/code-browser/.gitignore

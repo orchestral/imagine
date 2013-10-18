@@ -5,11 +5,13 @@
     <target name="clean" description="Clean up and create artifact directories">
         <delete dir="${basedir}/build/code-browser"/>
         <delete dir="${basedir}/build/coverage"/>
+        <delete dir="${basedir}/build/docs"/>
         <delete dir="${basedir}/build/logs"/>
         <delete dir="${basedir}/build/pdepend"/>
 
         <mkdir dir="${basedir}/build/code-browser"/>
         <mkdir dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/docs"/>
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
     </target>
@@ -18,6 +20,7 @@
         <exec executable="composer.phar">
             <arg value="update"/>
             <arg value="--dev"/>
+            <arg value="--prefer-dist"/>
         </exec>
     </target>
 
@@ -113,9 +116,19 @@
         <exec executable="phpunit" failonerror="true" />
     </target>
 
-    <target name="build"
-     depends="clean,composer-update,composer-dumpautoload,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
-     
-    <target name="quick-build"
-       depends="clean,composer-dumpautoload,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
+    <target name="phpdoc" description="Run build phpdoc">
+        <exec executable="phpdoc">
+            <arg value="-d"/>
+            <arg value="src/"/>
+            <arg value="-i"/>
+            <arg value="*tests*"/>
+            <arg value="-t"/>
+            <arg value="${basedir}/build/docs"/>
+        </exec>
+    </target>
+
+    <target name="build" depends="update,generate"/>
+    <target name="generate" depends="clean,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb,phpdoc"/>
+    <target name="update" depends="composer-update,composer-dumpautoload"/>
+    <target name="quick-build" depends="composer-dumpautoload,generate"/>
 </project>
