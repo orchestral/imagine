@@ -1,7 +1,7 @@
 {
 	"name": "orchestra/imagine",
 	"description": "Imagine Package for Laravel 4",
-	"keywords": ["orchestra-platform", "orchestral", "laravel"],
+	"keywords": ["orchestra-platform", "orchestral", "laravel", "image-manipulation", "image"],
 	"license": "MIT",
 	"authors": [
 		{
