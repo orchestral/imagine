@@ -5,8 +5,8 @@ Imagine Package for Laravel 4
 
 [![Latest Stable Version](https://poser.pugx.org/orchestra/imagine/v/stable.png)](https://packagist.org/packages/orchestra/imagine) 
 [![Total Downloads](https://poser.pugx.org/orchestra/imagine/downloads.png)](https://packagist.org/packages/orchestra/imagine) 
-[![Build Status](https://travis-ci.org/orchestral/imagine.png?branch=2.1)](https://travis-ci.org/orchestral/imagine) 
-[![Coverage Status](https://coveralls.io/repos/orchestral/imagine/badge.png?branch=2.1)](https://coveralls.io/r/orchestral/imagine?branch=2.1) 
+[![Build Status](https://travis-ci.org/orchestral/imagine.png?branch=master)](https://travis-ci.org/orchestral/imagine) 
+[![Coverage Status](https://coveralls.io/repos/orchestral/imagine/badge.png?branch=master)](https://coveralls.io/r/orchestral/imagine?branch=master) 
 
 ## Quick Installation
 
