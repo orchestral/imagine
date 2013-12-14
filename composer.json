@@ -15,8 +15,8 @@
 	},
 	"require-dev": {
 		"mockery/mockery": "0.8.*",
-		"illuminate/container": "4.1.*",
-		"illuminate/support": "4.1.*"
+		"illuminate/container": "4.2.*",
+		"illuminate/support": "4.2.*"
 	},
 	"autoload": {
 		"psr-0": {
