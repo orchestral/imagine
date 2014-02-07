@@ -14,7 +14,7 @@
 		"imagine/imagine": "~0.5"
 	},
 	"require-dev": {
-		"mockery/mockery": "0.8.*",
+		"mockery/mockery": "0.9.*",
 		"illuminate/container": "4.1.*",
 		"illuminate/support": "4.1.*"
 	},
