@@ -44,7 +44,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
         $app['path']  = __DIR__.'/../';
 
         $files->shouldReceive('isDirectory')->andReturn(false);
-        $config->shouldReceive('get')->once()->with('orchestra/imagine::driver', 'gd')->andReturn('gd');
+        $config->shouldReceive('get')->with('orchestra/imagine::driver', 'gd')->andReturn('gd');
 
         $stub = new ImagineServiceProvider($app);
         $stub->register();
