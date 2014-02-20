@@ -22,10 +22,11 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterMethod()
     {
-        $app  = new Container;
-        $stub = new ImagineServiceProvider($app);
+        $app = new Container;
 
+        $stub = new ImagineServiceProvider($app);
         $stub->register();
+
         $this->assertInstanceOf('\Orchestra\Imagine\ImagineManager', $app['orchestra.imagine']);
     }
 
@@ -36,7 +37,8 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testBootMethod()
     {
-        $app  = new Container;
+        $app = new Container;
+
         $app['config'] = $config = m::mock('Config\Manager');
         $app['files'] = $files = m::mock('Filesystem');
         $app['path']  = __DIR__.'/../';
@@ -48,6 +50,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
         $stub->register();
         $stub->boot();
 
+        $this->assertInstanceOf('\Imagine\Gd\Imagine', $app->make('Imagine\Image\ImagineInterface'));
         $this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver());
         $this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver('gd'));
         $this->assertInstanceOf('\Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver('imagick'));
@@ -61,7 +64,8 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testProvidesMethod()
     {
-        $app  = new Container;
+        $app = new Container;
+
         $stub = new ImagineServiceProvider($app);
 
         $this->assertEquals(array('orchestra.imagine'), $stub->provides());
