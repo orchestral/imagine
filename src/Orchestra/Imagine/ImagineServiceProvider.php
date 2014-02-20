@@ -18,8 +18,24 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['orchestra.imagine'] = $this->app->share(function ($app) {
+        $this->app->bindShared('orchestra.imagine', function ($app) {
             return new ImagineManager($app);
+        });
+
+        $this->registerCoreContainerAliases();
+    }
+
+    /**
+     * Register the core class aliases in the container.
+     *
+     * @return void
+     */
+    protected function registerCoreContainerAliases()
+    {
+        $this->app->alias('orchestra.imagine', 'Orchestra\Imagine\ImagineManager');
+
+        $this->app->bind('Imagine\Image\ImagineInterface', function ($app) {
+            return $app['orchestra.imagine']->driver();
         });
     }
 
