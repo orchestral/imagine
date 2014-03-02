@@ -20,8 +20,8 @@
 		"illuminate/support": "4.2.*"
 	},
 	"autoload": {
-		"psr-0": {
-			"Orchestra\\Imagine": "src/"
+		"psr-4": {
+			"Orchestra\\Imagine\\": "src/Imagine/"
 		}
 	},
 	"extra": {
