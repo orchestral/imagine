@@ -46,7 +46,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = realpath(__DIR__.'/../../');
+        $path = realpath(__DIR__.'/../');
 
         $this->package('orchestra/imagine', 'orchestra/imagine', $path);
     }
