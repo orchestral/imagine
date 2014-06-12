@@ -3,6 +3,13 @@ title: Imagine Change Log
 
 ---
 
+## Version 2.2 {#v2-2}
+
+### v2.2.0 {#v2-2-0}
+
+* Bump minimum version to PHP v5.4.0.
+* Add support for Laravel Framework v4.2.
+
 ## Version 2.1 {#v2-1}
 
 ### v2.1.1 {#v2-1-1}
