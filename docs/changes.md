@@ -5,6 +5,10 @@ title: Imagine Change Log
 
 ## Version 2.2 {#v2-2}
 
+### v2.2.1 {#v2-2-1}
+
+* Update `Orchestra\Imagine\ImagineManager::getDefaultDriver()` to comply with Laravel Framework.
+
 ### v2.2.0 {#v2-2-0}
 
 * Bump minimum version to PHP v5.4.0.
