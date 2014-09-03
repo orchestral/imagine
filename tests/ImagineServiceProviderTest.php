@@ -39,8 +39,8 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Container;
 
-        $app['config'] = $config = m::mock('Config\Manager');
-        $app['files'] = $files = m::mock('Filesystem');
+        $app['config'] = $config = m::mock('\Illuminate\Config\Repository');
+        $app['files'] = $files = m::mock('\Illuminate\Filesystem\Filesystem');
         $app['path']  = __DIR__.'/../';
 
         $files->shouldReceive('isDirectory')->andReturn(false);
