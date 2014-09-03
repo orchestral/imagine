@@ -7,21 +7,13 @@ php:
   - 5.6
   - hhvm
 
-env:
-  - IMAGINE_DRIVER=imagick
-  - IMAGINE_DRIVER=gmagick
-
 before_script:
   - travis_retry composer self-update
   - travis_retry composer require satooshi/php-coveralls:~0.6 --prefer-source --no-interaction --dev
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
-  - sh -c "if [ '$IMAGINE_DRIVER' = 'imagick' ]; then
-              sh ./tests/travis/imagick.sh
-            fi"
-  - sh -c "if [ '$IMAGINE_DRIVER' = 'gmagick' ]; then
-              sh ./tests/travis/gmagick.sh
-            fi"
+  - sh ./tests/travis/imagick.sh
+  - sh ./tests/travis/gmagick.sh
 
 script: phpunit -c phpunit.xml --coverage-text
 
