@@ -1,6 +1,6 @@
 language: php
 
-php: 
+php:
   - 5.3
   - 5.4
   - 5.5
@@ -8,11 +8,11 @@ php:
   - hhvm
 
 before_script:
-  - composer self-update
-  - composer require satooshi/php-coveralls:~0.6 --prefer-source --no-interaction --dev
-  - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
-  - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
-  - sh -c "
+  - travis_retry composer self-update
+  - travis_retry composer require satooshi/php-coveralls:~0.6 --prefer-source --no-interaction --dev
+  - travis_retry sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
+  - travis_retry sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
+  - travis_retry sh -c "
               wget http://www.imagemagick.org/download/legacy/ImageMagick-6.8.5-10.tar.gz;
               tar xzf ImageMagick-6.8.5-10.tar.gz;
               cd ImageMagick-6.8.5-10;
@@ -52,6 +52,5 @@ after_script:
 
 matrix:
   allow_failures:
-    - php: 5.6
     - php: hhvm
   fast_finish: true
