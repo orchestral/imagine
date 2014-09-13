@@ -39,9 +39,10 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Container;
 
-        $app['config'] = $config = m::mock('\Illuminate\Config\Repository');
+        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Config');
         $app['files'] = $files = m::mock('\Illuminate\Filesystem\Filesystem');
         $app['path']  = __DIR__.'/../';
+        $app['path.base']  = __DIR__.'/../';
 
         $files->shouldReceive('isDirectory')->andReturn(false);
         $config->shouldReceive('get')->with('orchestra/imagine::driver', 'gd')->andReturn('gd');
@@ -68,6 +69,6 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
 
         $stub = new ImagineServiceProvider($app);
 
-        $this->assertEquals(array('orchestra.imagine'), $stub->provides());
+        $this->assertContains('orchestra.imagine', $stub->provides());
     }
 }
