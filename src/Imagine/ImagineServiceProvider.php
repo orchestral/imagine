@@ -18,7 +18,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('orchestra.imagine', function ($app) {
+        $this->app[ 'orchestra.imagine' ]=$this->app->share( function ($app) {
             return new ImagineManager($app);
         });
 
