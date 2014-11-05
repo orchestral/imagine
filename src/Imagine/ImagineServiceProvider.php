@@ -18,7 +18,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('orchestra.imagine', function ($app) {
+        $this->app->singleton('orchestra.imagine', function ($app) {
             return new ImagineManager($app);
         });
 
@@ -58,6 +58,6 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('orchestra.imagine');
+        return ['orchestra.imagine'];
     }
 }

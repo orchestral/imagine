@@ -39,7 +39,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Container;
 
-        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Config');
+        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository');
         $app['files'] = $files = m::mock('\Illuminate\Filesystem\Filesystem');
         $app['path']  = __DIR__.'/../';
         $app['path.base']  = __DIR__.'/../';
