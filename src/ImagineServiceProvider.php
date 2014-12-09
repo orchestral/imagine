@@ -1,6 +1,6 @@
 <?php namespace Orchestra\Imagine;
 
-use Illuminate\Support\ServiceProvider;
+use Orchestra\Support\Providers\ServiceProvider;
 
 class ImagineServiceProvider extends ServiceProvider
 {
