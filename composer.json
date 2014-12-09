@@ -12,7 +12,8 @@
 	],
 	"require": {
 		"php": ">=5.4.0",
-		"imagine/imagine": "~0.5"
+		"imagine/imagine": "~0.5",
+		"orchestra/support-providers": "3.0.*"
 	},
 	"require-dev": {
 		"mockery/mockery": "0.9.*",
@@ -22,7 +23,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Orchestra\\Imagine\\": "src/Imagine/"
+			"Orchestra\\Imagine\\": "src/"
 		}
 	},
 	"extra": {
