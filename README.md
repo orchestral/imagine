@@ -49,7 +49,6 @@ Above installation can also be simplify by using the following command:
 
 Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
 
-
 ```php
 'providers' => array(
 
@@ -69,4 +68,3 @@ Add `Imagine` alias in `app/config/app.php`.
 	'Imagine' => 'Orchestra\Imagine\Facade',
 ),
 ```
-
