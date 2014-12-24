@@ -22,7 +22,6 @@ Laravel    | Imagine
 :----------|:----------
  4.0.x     | 2.0.x
 
-
 ## Installation
 
 To install through composer, simply put the following in your `composer.json` file:
@@ -43,9 +42,9 @@ Above installation can also be simplify by using the following command:
 
 	composer require "orchestra/imagine=2.0.*"
 
-Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
-
 ## Configuration
+
+Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
 
 ```php
 'providers' => array(
@@ -66,4 +65,3 @@ Add `Imagine` alias in `app/config/app.php`.
 	'Imagine' => 'Orchestra\Imagine\Facade',
 ),
 ```
-
