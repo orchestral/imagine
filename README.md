@@ -44,9 +44,9 @@ Above installation can also be simplify by using the following command:
 
 	composer require "orchestra/imagine=2.2.*"
 
-Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
-
 ## Configuration
+
+Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
 
 ```php
 'providers' => array(
@@ -67,4 +67,3 @@ Add `Imagine` alias in `app/config/app.php`.
 	'Imagine' => 'Orchestra\Imagine\Facade',
 ),
 ```
-
