@@ -45,9 +45,10 @@ Above installation can also be simplify by using the following command:
 
 	composer require "orchestra/imagine=3.0.*@dev"
 
+## Configuration
+
 Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
 
-## Configuration
 
 ```php
 'providers' => array(
