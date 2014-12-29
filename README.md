@@ -76,6 +76,9 @@ Here a simple example how to create a thumbnail from an image:
 ```php
 <?php
 
+use Imagine\Image\Box;
+use Imagine\Image\ImageInterface;
+
 function create_thumbnail($path, $filename, $extension)
 {
     $width  = 320;
