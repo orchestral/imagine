@@ -67,3 +67,24 @@ Add `Imagine` alias in `app/config/app.php`.
 	'Imagine' => 'Orchestra\Imagine\Facade',
 ),
 ```
+
+## Usage
+
+Here a simple example how to create a thumbnail from an image:
+
+```
+<?php
+
+function create_thumbnail($path, $filename, $extension)
+{
+    $width  = 320;
+    $height = 320;
+    $mode   = ImageInterface::THUMBNAIL_OUTBOUND;
+    $size   = new Box($width, $height);
+
+    $thumbnail   = Imagine::open("{$path}/{$filename}.{$extension}")->thumbnail($size, $mode);
+    $destination = "{$filename}.thumb.{$extension}";
+
+    $thumbnail->save("{$path}/{$destination}");
+}
+```
