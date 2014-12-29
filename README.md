@@ -73,7 +73,7 @@ Add `Imagine` alias in `app/config/app.php`.
 
 Here a simple example how to create a thumbnail from an image:
 
-```
+```php
 <?php
 
 function create_thumbnail($path, $filename, $extension)
