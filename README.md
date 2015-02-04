@@ -6,9 +6,9 @@ Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https:/
 [![Latest Stable Version](https://img.shields.io/github/release/orchestral/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
 [![Total Downloads](https://img.shields.io/packagist/dt/orchestra/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
 [![MIT License](https://img.shields.io/packagist/l/orchestra/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
-[![Build Status](https://img.shields.io/travis/orchestral/imagine/master.svg?style=flat)](https://travis-ci.org/orchestral/imagine)
-[![Coverage Status](https://img.shields.io/coveralls/orchestral/imagine/master.svg?style=flat)](https://coveralls.io/r/orchestral/imagine?branch=master)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/imagine/master.svg?style=flat)](https://scrutinizer-ci.com/g/orchestral/imagine/)
+[![Build Status](https://img.shields.io/travis/orchestral/imagine/3.0.svg?style=flat)](https://travis-ci.org/orchestral/imagine)
+[![Coverage Status](https://img.shields.io/coveralls/orchestral/imagine/3.0.svg?style=flat)](https://coveralls.io/r/orchestral/imagine?branch=3.0)
+[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/imagine/3.0.svg?style=flat)](https://scrutinizer-ci.com/g/orchestral/imagine/)
 
 ## Table of Content
 
@@ -23,7 +23,7 @@ Laravel    | Imagine
  4.0.x     | 2.0.x
  4.1.x     | 2.1.x
  4.2.x     | 2.2.x
- 5.0.x     | 3.0.x@dev
+ 5.0.x     | 3.0.x
 
 ## Installation
 
@@ -32,7 +32,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
 	"require": {
-		"orchestra/imagine": "3.0.*@dev"
+		"orchestra/imagine": "3.0.*"
 	}
 }
 ```
@@ -43,30 +43,30 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-	composer require "orchestra/imagine=3.0.*@dev"
+	composer require "orchestra/imagine=3.0.*"
 
 ## Configuration
 
 Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
 
 ```php
-'providers' => array(
+'providers' => [
 
 	// ...
 
 	'Orchestra\Imagine\ImagineServiceProvider',
-),
+],
 ```
 
 Add `Imagine` alias in `app/config/app.php`.
 
 ```php
-'aliases' => array(
+'aliases' => [
 
 	// ...
 
 	'Imagine' => 'Orchestra\Imagine\Facade',
-),
+],
 ```
 
 ## Usage
