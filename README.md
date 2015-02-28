@@ -15,6 +15,7 @@ Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https:/
 * [Version Compatibility](#version-compatibility)
 * [Installation](#installation)
 * [Configuration](#configuration)
+* [Usage](#usage)
 
 ## Version Compatibility
 
@@ -48,7 +49,7 @@ Above installation can also be simplify by using the following command:
 
 ## Configuration
 
-Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `app/config/app.php`.
+Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `config/app.php`.
 
 ```php
 'providers' => [
