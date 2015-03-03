@@ -14,7 +14,7 @@ class ImagineManager extends Manager
      */
     protected function createGdDriver()
     {
-        return new Gd;
+        return new Gd();
     }
 
     /**
@@ -24,7 +24,7 @@ class ImagineManager extends Manager
      */
     protected function createGmagickDriver()
     {
-        return new Gmagick;
+        return new Gmagick();
     }
 
     /**
@@ -34,7 +34,7 @@ class ImagineManager extends Manager
      */
     protected function createImagickDriver()
     {
-        return new Imagick;
+        return new Imagick();
     }
 
     /**
@@ -47,10 +47,11 @@ class ImagineManager extends Manager
         return $this->app['config']->get('orchestra/imagine::driver', 'gd');
     }
 
-     /**
+    /**
      * Set the default driver.
      *
      * @param  string   $name
+     *
      * @return void
      */
     public function setDefaultDriver($name)
