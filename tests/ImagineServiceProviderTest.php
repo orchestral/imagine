@@ -22,7 +22,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterMethod()
     {
-        $app = new Container;
+        $app = new Container();
 
         $stub = new ImagineServiceProvider($app);
         $stub->register();
@@ -37,11 +37,11 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testBootMethod()
     {
-        $app = new Container;
+        $app = new Container();
 
-        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository');
-        $app['files'] = $files = m::mock('\Illuminate\Filesystem\Filesystem');
-        $app['path']  = __DIR__.'/../';
+        $app['config']     = $config     = m::mock('\Illuminate\Contracts\Config\Repository');
+        $app['files']      = $files      = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app['path']       = __DIR__.'/../';
         $app['path.base']  = __DIR__.'/../';
 
         $files->shouldReceive('isDirectory')->andReturn(false);
@@ -65,7 +65,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testProvidesMethod()
     {
-        $app = new Container;
+        $app = new Container();
 
         $stub = new ImagineServiceProvider($app);
 
