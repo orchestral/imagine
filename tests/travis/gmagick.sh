@@ -6,5 +6,5 @@ phpize;
 ./configure --with-gmagick=/usr/local;
 make -j;
 sudo make install;
-echo "extension=gmagick.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`;
+echo "extension=gmagick.so"  >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini;
 php --ri gmagick;

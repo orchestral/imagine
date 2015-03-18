@@ -1,6 +1,6 @@
-wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-7.tar.gz;
-tar xzf ImageMagick-6.8.9-7.tar.gz;
-cd ImageMagick-6.8.9-7;
+wget http://www.imagemagick.org/download/ImageMagick-6.9.0-10.tar.gz;
+tar xzf ImageMagick-6.9.0-10.tar.gz;
+cd ImageMagick-6.9.0-10;
 ./configure --prefix=/opt/imagemagick;
 make -j;
 sudo make install;
@@ -14,5 +14,5 @@ phpize;
 ./configure --with-imagick=/opt/imagemagick;
 make -j;
 sudo make install;
-echo "extension=imagick.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`;
+echo "extension=imagick.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini;
 php --ri imagick;
