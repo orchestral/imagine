@@ -14,5 +14,5 @@ phpize;
 ./configure --with-imagick=/opt/imagemagick;
 make -j;
 sudo make install;
-echo \"extension=imagick.so\" >> `php --ini | grep \"Loaded Configuration\" | sed -e \"s|.*:\s*||\"`;
+echo "extension=imagick.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`;
 php --ri imagick;
