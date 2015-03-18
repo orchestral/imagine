@@ -19,7 +19,12 @@ class ImagineServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('orchestra.imagine', function ($app) {
-            return new ImagineManager($app);
+            $manager = new ImagineManager($app);
+            $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
+
+            $manager->setConfig($app['config'][$namespace]);
+
+            return $manager;
         });
 
         $this->registerCoreContainerAliases();
@@ -49,6 +54,26 @@ class ImagineServiceProvider extends ServiceProvider
         $path = realpath(__DIR__.'/../resources');
 
         $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', $path.'/config');
+
+        if (! $this->hasPackageRepository()) {
+            $this->bootUsingLaravel($path);
+        }
+    }
+
+    /**
+     * Boot using Laravel setup.
+     *
+     * @param  string  $path
+     *
+     * @return void
+     */
+    protected function bootUsingLaravel($path)
+    {
+        $this->mergeConfigFrom("{$path}/config/config.php", 'orchestra.imagine');
+
+        $this->publishes([
+            "{$path}/config/config.php" => config_path('orchestra/imagine.php'),
+        ]);
     }
 
     /**

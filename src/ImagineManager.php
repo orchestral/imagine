@@ -1,5 +1,6 @@
 <?php namespace Orchestra\Imagine;
 
+use Illuminate\Support\Arr;
 use Imagine\Gd\Imagine as Gd;
 use Illuminate\Support\Manager;
 use Imagine\Gmagick\Imagine as Gmagick;
@@ -7,6 +8,13 @@ use Imagine\Imagick\Imagine as Imagick;
 
 class ImagineManager extends Manager
 {
+    /**
+     * Configuration values.
+     *
+     * @var array
+     */
+    protected $config = [];
+
     /**
      * Create an instance of the GD driver.
      *
@@ -44,7 +52,7 @@ class ImagineManager extends Manager
      */
     public function getDefaultDriver()
     {
-        return $this->app['config']->get('orchestra/imagine::driver', 'gd');
+        return Arr::get($this->config, 'driver', 'gd');
     }
 
     /**
@@ -56,6 +64,30 @@ class ImagineManager extends Manager
      */
     public function setDefaultDriver($name)
     {
-        $this->app['config']->set('orchestra/imagine::driver', $name);
+        $this->config['driver'] = $name;
+    }
+
+    /**
+     * Get configuration values.
+     *
+     * @return array
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * Set configuration.
+     *
+     * @param  array  $config
+     *
+     * @return $this
+     */
+    public function setConfig($config)
+    {
+        $this->config = $config;
+
+        return $this;
     }
 }
