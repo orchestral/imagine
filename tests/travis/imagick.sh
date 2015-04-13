@@ -1,4 +1,4 @@
-wget http://www.imagemagick.org/download/ImageMagick-6.9.0-10.tar.gz;
+wget http://www.imagemagick.org/download/ImageMagick.tar.gz;
 tar xzf ImageMagick.tar.gz;
 cd ImageMagick;
 ./configure --prefix=/opt/imagemagick;
