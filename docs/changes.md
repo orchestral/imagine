@@ -2,10 +2,15 @@
 title: Imagine Change Log
 
 ---
+## Version 3.1 {#v3-1}
+
+### v3.1.0 {#v3-1-0}
+
+* Update support to Laravel Framework v5.1.
 
 ## Version 3.0 {#v3-0}
 
-### v3.0.1 {#v3.0.1}
+### v3.0.1 {#v3-0-1}
 
 * Add fallback support to Laravel 5 configuration.
 
