@@ -59,7 +59,7 @@ Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `config/app.p
 ],
 ```
 
-Add `Imagine` alias in `app/config/app.php`.
+Add `Imagine` alias in `config/app.php`.
 
 ```php
 'aliases' => [
