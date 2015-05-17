@@ -34,7 +34,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
 	"require": {
-		"orchestra/imagine": "3.1.*"
+		"orchestra/imagine": "~3.0"
 	}
 }
 ```
@@ -45,7 +45,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-	composer require "orchestra/imagine=3.1.*"
+	composer require "orchestra/imagine=~3.0"
 
 ## Configuration
 
