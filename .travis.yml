@@ -22,6 +22,7 @@ before_script:
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
   - sh ./tests/travis/imagick.sh
   - sh ./tests/travis/gmagick.sh
+  - phpenv rehash
 
 script:
   - if [[ $coverage = 'yes' ]]; then phpunit -c phpunit.xml --coverage-clover build/logs/clover.xml; fi
