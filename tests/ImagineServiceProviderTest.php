@@ -48,7 +48,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
         $app->instance('config', $config);
         $app->instance('files', $files);
 
-        $app->shouldReceive('basePath')->once()->andReturn(__DIR__.'/../');
+        $app->shouldReceive('basePath')->andReturn(__DIR__.'/../');
 
         $files->shouldReceive('isDirectory')->andReturn(false);
         $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn(['driver' => 'gd']);
