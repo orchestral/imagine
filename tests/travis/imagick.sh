@@ -1,6 +1,6 @@
-wget http://www.imagemagick.org/download/ImageMagick-6.9.1-4.tar.gz;
-tar xzf ImageMagick-6.9.1-4.tar.gz;
-cd ImageMagick-6.9.1-4;
+wget http://www.imagemagick.org/download/ImageMagick-6.9.1-5.tar.gz;
+tar xzf ImageMagick-6.9.1-5.tar.gz;
+cd ImageMagick-6.9.1-5;
 ./configure --prefix=/opt/imagemagick;
 make -j;
 sudo make install;
