@@ -23,9 +23,10 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
     public function testRegisterMethod()
     {
         $app = new Container();
-        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository', '\ArrayAccess');
+        $config = m::mock('\Illuminate\Contracts\Config\Repository');
+        $app->instance('config', $config);
 
-        $config->shouldReceive('offsetGet')->once()->with('orchestra.imagine')->andReturn([]);
+        $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn([]);
 
         $stub = new ImagineServiceProvider($app);
         $stub->register();
@@ -42,13 +43,11 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app = new Container();
 
-        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository', '\ArrayAccess');
+        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository');
         $app['files'] = $files = m::mock('\Illuminate\Filesystem\Filesystem');
-        $app['path'] = __DIR__.'/../';
-        $app['path.base']  = __DIR__.'/../';
 
         $files->shouldReceive('isDirectory')->andReturn(false);
-        $config->shouldReceive('offsetGet')->once()->with('orchestra.imagine')->andReturn(['driver' => 'gd']);
+        $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn(['driver' => 'gd']);
 
         $stub = m::mock('\Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
                     ->shouldAllowMockingProtectedMethods();
