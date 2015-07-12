@@ -22,7 +22,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterMethod()
     {
-        $app = new Container();
+        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
         $app->instance('config', $config);
 
@@ -41,7 +41,7 @@ class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testBootMethod()
     {
-        $app = m::mock('\Illuminate\Container\Container[basePath]');
+        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
         $files = m::mock('\Illuminate\Filesystem\Filesystem');
 

@@ -1,6 +1,7 @@
 <?php namespace Orchestra\Imagine;
 
 use Imagine\Image\ImagineInterface;
+use Illuminate\Contracts\Foundation\Application;
 use Orchestra\Support\Providers\ServiceProvider;
 
 class ImagineServiceProvider extends ServiceProvider
@@ -19,7 +20,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('orchestra.imagine', function ($app) {
+        $this->app->singleton('orchestra.imagine', function (Application $app) {
             $manager = new ImagineManager($app);
             $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
 
@@ -40,7 +41,7 @@ class ImagineServiceProvider extends ServiceProvider
     {
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
-        $this->app->bind(ImagineInterface::class, function ($app) {
+        $this->app->bind(ImagineInterface::class, function (Application $app) {
             return $app->make('orchestra.imagine')->driver();
         });
     }
