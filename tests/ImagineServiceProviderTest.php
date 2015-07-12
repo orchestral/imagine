@@ -7,14 +7,6 @@ use Orchestra\Imagine\ImagineServiceProvider;
 class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Setup the test environment.
-     */
-    public function setUp()
-    {
-        $this->markTestSkipped();
-    }
-
-    /**
      * Teardown the test environment.
      */
     public function tearDown()
