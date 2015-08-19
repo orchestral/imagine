@@ -1,14 +1,16 @@
 Imagine (Wrapper) Component for Laravel 5
 ==============
 
+[![Join the chat at https://gitter.im/orchestral/platform/components](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orchestral/platform/components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
-[![Latest Stable Version](https://img.shields.io/github/release/orchestral/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
-[![Total Downloads](https://img.shields.io/packagist/dt/orchestra/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
-[![MIT License](https://img.shields.io/packagist/l/orchestra/imagine.svg?style=flat)](https://packagist.org/packages/orchestra/imagine)
-[![Build Status](https://img.shields.io/travis/orchestral/imagine/master.svg?style=flat)](https://travis-ci.org/orchestral/imagine)
-[![Coverage Status](https://img.shields.io/coveralls/orchestral/imagine/master.svg?style=flat)](https://coveralls.io/r/orchestral/imagine?branch=master)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/imagine/master.svg?style=flat)](https://scrutinizer-ci.com/g/orchestral/imagine/)
+[![Latest Stable Version](https://img.shields.io/github/release/orchestral/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
+[![Total Downloads](https://img.shields.io/packagist/dt/orchestra/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
+[![MIT License](https://img.shields.io/packagist/l/orchestra/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
+[![Build Status](https://img.shields.io/travis/orchestral/imagine/master.svg?style=flat-square)](https://travis-ci.org/orchestral/imagine)
+[![Coverage Status](https://img.shields.io/coveralls/orchestral/imagine/master.svg?style=flat-square)](https://coveralls.io/r/orchestral/imagine?branch=master)
+[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/imagine/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/orchestral/imagine/)
 
 ## Table of Content
 
