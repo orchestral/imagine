@@ -3,6 +3,7 @@
 use Orchestra\Support\Str;
 use Illuminate\Support\Arr;
 use Imagine\Image\ImageInterface;
+use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 abstract class Generator extends Job implements SelfHandling
@@ -27,11 +28,11 @@ abstract class Generator extends Job implements SelfHandling
     /**
      * Execute the job.
      *
-     * @param \Imagine\Image\ImageInterface $imagine
+     * @param \Imagine\Image\ImagineInterface $imagine
      *
      * @return void
      */
-    public function handle(ImageInterface $imagine)
+    public function handle(ImagineInterface $imagine)
     {
         $data = $this->getFilteredOptions($this->options);
         $path = $data['path'];
@@ -63,7 +64,7 @@ abstract class Generator extends Job implements SelfHandling
             'filename',
             'extension',
             'format',
-        ], array_keys($default));
+        ], array_keys($default)));
 
         $data = Arr::only($options, $uses);
 
