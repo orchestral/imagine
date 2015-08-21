@@ -1,5 +1,7 @@
 <?php namespace Orchestra\Imagine;
 
+use Imagine\Image\ImagineInterface;
+use Illuminate\Contracts\Foundation\Application;
 use Orchestra\Support\Providers\ServiceProvider;
 
 class ImagineServiceProvider extends ServiceProvider
@@ -18,11 +20,11 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('orchestra.imagine', function ($app) {
+        $this->app->singleton('orchestra.imagine', function (Application $app) {
             $manager = new ImagineManager($app);
             $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
 
-            $manager->setConfig($app['config'][$namespace]);
+            $manager->setConfig($app->make('config')->get($namespace));
 
             return $manager;
         });
@@ -37,10 +39,10 @@ class ImagineServiceProvider extends ServiceProvider
      */
     protected function registerCoreContainerAliases()
     {
-        $this->app->alias('orchestra.imagine', 'Orchestra\Imagine\ImagineManager');
+        $this->app->alias('orchestra.imagine', ImagineManager::class);
 
-        $this->app->bind('Imagine\Image\ImagineInterface', function ($app) {
-            return $app['orchestra.imagine']->driver();
+        $this->app->bind(ImagineInterface::class, function (Application $app) {
+            return $app->make('orchestra.imagine')->driver();
         });
     }
 
@@ -53,7 +55,7 @@ class ImagineServiceProvider extends ServiceProvider
     {
         $path = realpath(__DIR__.'/../resources');
 
-        $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', $path.'/config');
+        $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', "{$path}/config");
 
         if (! $this->hasPackageRepository()) {
             $this->bootUsingLaravel($path);

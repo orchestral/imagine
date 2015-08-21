@@ -1,5 +1,7 @@
 language: php
 
+sudo: required
+
 php:
   - 5.5
   - 5.6
@@ -22,6 +24,7 @@ before_script:
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
   - sh ./tests/travis/imagick.sh
   - sh ./tests/travis/gmagick.sh
+  - phpenv rehash
 
 script:
   - if [[ $coverage = 'yes' ]]; then phpunit -c phpunit.xml --coverage-clover build/logs/clover.xml; fi
@@ -39,8 +42,8 @@ matrix:
     - php: 5.5
       env: setup=coveralls coverage=yes
   allow_failures:
-    - env: setup=lowest
     - env: setup=stable
+    - env: setup=coveralls coverage=yes
     - php: 7.0
     - php: hhvm
   fast_finish: true
