@@ -8,7 +8,7 @@ class ResizeImage extends Generator
      * @param  \Imagine\Image\ImageInterface  $image
      * @param  array  $data
      *
-     * @return void
+     * @return \Imagine\Image\ImageInterface
      */
     protected function handleImageManipulation(ImageInterface $image, array $data)
     {
@@ -19,7 +19,7 @@ class ResizeImage extends Generator
             $width = $height = $data['dimension'];
         }
 
-        $image->resize(new Box($width, $height), $data['filter']);
+        return $image->resize(new Box($width, $height), $data['filter']);
     }
 
     /**

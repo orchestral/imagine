@@ -40,11 +40,8 @@ abstract class Generator extends Job implements SelfHandling
         $source      = Str::replace('{filename}.{extension}', $data);
         $destination = Str::replace($data['format'], $data);
 
-        $image = $imagine->open("{$path}/{$source}");
-
-        $this->handleImageManipulation($image, $data);
-
-        $image->save("{$path}/{$destination}");
+        $this->handleImageManipulation($imagine->open("{$path}/{$source}"), $data)
+            ->save("{$path}/{$destination}");
     }
 
     /**
@@ -57,7 +54,7 @@ abstract class Generator extends Job implements SelfHandling
     protected function getFilteredOptions(array $options)
     {
         $default = $this->getDefaultOptions();
-        $options = array_merge($options, $default);
+        $options = array_merge($default, $options);
 
         $uses = array_unique(array_merge([
             'path',
@@ -76,7 +73,7 @@ abstract class Generator extends Job implements SelfHandling
      *
      * @param  \Imagine\Image\ImageInterface  $image
      * @param  array  $data
-     * @return void
+     * @return \Imagine\Image\ImageInterface
      */
     abstract protected function handleImageManipulation(ImageInterface $image, array $data);
 
