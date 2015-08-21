@@ -38,7 +38,7 @@ abstract class Generator extends Job implements SelfHandling
         $path = $data['path'];
 
         $source      = Str::replace('{filename}.{extension}', $data);
-        $destination = Str::replace($format, $data);
+        $destination = Str::replace($data['format'], $data);
 
         $image = $imagine->open("{$path}/{$source}");
 
