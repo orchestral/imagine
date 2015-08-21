@@ -11,13 +11,13 @@ class CreateThumbnail extends Generator
      * @param  \Imagine\Image\ImageInterface  $image
      * @param  array  $data
      *
-     * @return void
+     * @return \Imagine\Image\ImageInterface
      */
     protected function handleImageManipulation(ImageInterface $image, array $data)
     {
         $width = $height = $data['dimension'];
 
-        $image->thumbnail(new Box($width, $height), $data['mode'], $data['filter']);
+        return $image->thumbnail(new Box($width, $height), $data['mode'], $data['filter']);
     }
 
     /**

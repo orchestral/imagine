@@ -4,6 +4,10 @@ title: Imagine Change Log
 ---
 ## Version 3.1 {#v3-1}
 
+### v3.1.2 {#v3-1-2}
+
+* Fixes dispatchable job not resizing the file as expected.
+
 ### v3.1.1 {#v3-1-1}
 
 * Improved performances by reducing call within `Illuminate\Container\Container`.
