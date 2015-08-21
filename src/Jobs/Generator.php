@@ -8,20 +8,38 @@ use Illuminate\Contracts\Bus\SelfHandling;
 abstract class Generator extends Job implements SelfHandling
 {
     /**
-     * Execute the job.
+     * Generator options.
+     *
+     * @var array
+     */
+    protected $options = [];
+
+    /**
+     * Construct a new Job.
      *
      * @param  array  $options
+     */
+    public function __construct(array $options)
+    {
+        $this->options = $options;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @param \Imagine\Image\ImageInterface $imagine
      *
      * @return void
      */
-    public function handle(array $options)
+    public function handle(ImageInterface $imagine)
     {
-        $data        = $this->getFilteredOptions($options);
-        $path        = $data['path'];
+        $data = $this->getFilteredOptions($this->options);
+        $path = $data['path'];
+
         $source      = Str::replace('{filename}.{extension}', $data);
         $destination = Str::replace($format, $data);
 
-        $image = $this->imagine->open("{$path}/{$source}");
+        $image = $imagine->open("{$path}/{$source}");
 
         $this->handleImageManipulation($image, $data);
 
