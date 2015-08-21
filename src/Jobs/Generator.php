@@ -73,6 +73,7 @@ abstract class Generator extends Job implements SelfHandling
      *
      * @param  \Imagine\Image\ImageInterface  $image
      * @param  array  $data
+     *
      * @return \Imagine\Image\ImageInterface
      */
     abstract protected function handleImageManipulation(ImageInterface $image, array $data);

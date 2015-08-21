@@ -1,7 +1,6 @@
 <?php namespace Orchestra\Imagine\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Imagine\Image\ImageInterface;
 
 abstract class Job
 {
