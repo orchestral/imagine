@@ -82,6 +82,7 @@ Here a simple example how to create a thumbnail from an image:
 
 use Imagine\Image\Box;
 use Imagine\Image\ImageInterface;
+use Orchestra\Imagine\Facade as Imagine;
 
 function create_thumbnail($path, $filename, $extension)
 {
