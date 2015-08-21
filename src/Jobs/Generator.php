@@ -3,25 +3,44 @@
 use Orchestra\Support\Str;
 use Illuminate\Support\Arr;
 use Imagine\Image\ImageInterface;
+use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 abstract class Generator extends Job implements SelfHandling
 {
     /**
-     * Execute the job.
+     * Generator options.
+     *
+     * @var array
+     */
+    protected $options = [];
+
+    /**
+     * Construct a new Job.
      *
      * @param  array  $options
+     */
+    public function __construct(array $options)
+    {
+        $this->options = $options;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @param \Imagine\Image\ImagineInterface $imagine
      *
      * @return void
      */
-    public function handle(array $options)
+    public function handle(ImagineInterface $imagine)
     {
-        $data        = $this->getFilteredOptions($options);
-        $path        = $data['path'];
-        $source      = Str::replace('{filename}.{extension}', $data);
-        $destination = Str::replace($format, $data);
+        $data = $this->getFilteredOptions($this->options);
+        $path = $data['path'];
 
-        $image = $this->imagine->open("{$path}/{$source}");
+        $source      = Str::replace('{filename}.{extension}', $data);
+        $destination = Str::replace($data['format'], $data);
+
+        $image = $imagine->open("{$path}/{$source}");
 
         $this->handleImageManipulation($image, $data);
 
@@ -45,7 +64,7 @@ abstract class Generator extends Job implements SelfHandling
             'filename',
             'extension',
             'format',
-        ], array_keys($default));
+        ], array_keys($default)));
 
         $data = Arr::only($options, $uses);
 

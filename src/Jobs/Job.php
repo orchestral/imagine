@@ -17,21 +17,4 @@ abstract class Job
     */
 
     use Queueable;
-
-    /**
-     * The image manipulation implementation.
-     *
-     * @var \Imagine\Image\ImageInterface
-     */
-    protected $imagine;
-
-    /**
-     * Construct a new Job.
-     *
-     * @param \Imagine\Image\ImageInterface $imagine
-     */
-    public function __construct(ImageInterface $imagine)
-    {
-        $this->imagine = $imagine;
-    }
 }

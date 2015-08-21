@@ -85,6 +85,6 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['orchestra.imagine'];
+        return ['orchestra.imagine', ImagineInterface::class];
     }
 }
