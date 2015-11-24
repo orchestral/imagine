@@ -59,7 +59,7 @@ Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `config/app.p
 
 	// ...
 
-	'Orchestra\Imagine\ImagineServiceProvider',
+	Orchestra\Imagine\ImagineServiceProvider::class,
 ],
 ```
 
@@ -70,7 +70,7 @@ Add `Imagine` alias in `config/app.php`.
 
 	// ...
 
-	'Imagine' => 'Orchestra\Imagine\Facade',
+	'Imagine' => Orchestra\Imagine\Facade::class,
 ],
 ```
 
