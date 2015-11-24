@@ -2,6 +2,16 @@
 title: Imagine Change Log
 
 ---
+
+## Version 3.2 {#v3-2}
+
+### v3.2.0 {#v3-2-0}
+
+* Update support to Laravel Framework v5.2.
+* Improved performances by reducing call within `Illuminate\Container\Container`.
+* Create dispatchable job that you can use to create image thumbnail via `Orchestra\Imagine\Jobs\CreateThumbnail`.
+* Create dispatchable job that you can use to resize an image via `Orchestra\Imagine\Jobs\ResizeImage`.
+
 ## Version 3.1 {#v3-1}
 
 ### v3.1.2 {#v3-1-2}
