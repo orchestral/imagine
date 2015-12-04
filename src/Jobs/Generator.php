@@ -4,9 +4,8 @@ use Orchestra\Support\Str;
 use Illuminate\Support\Arr;
 use Imagine\Image\ImageInterface;
 use Imagine\Image\ImagineInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-abstract class Generator extends Job implements SelfHandling
+abstract class Generator extends Job
 {
     /**
      * Generator options.

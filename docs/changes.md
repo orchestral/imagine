@@ -14,6 +14,10 @@ title: Imagine Change Log
 
 ## Version 3.1 {#v3-1}
 
+### v3.1.3 {#v3-1-3}
+
+* Fixes missing import under `Orchestra\Imagine\Jobs\ResizeImage`.
+
 ### v3.1.2 {#v3-1-2}
 
 * Fixes dispatchable job not resizing the file as expected.

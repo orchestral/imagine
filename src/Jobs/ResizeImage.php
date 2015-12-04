@@ -1,5 +1,8 @@
 <?php namespace Orchestra\Imagine\Jobs;
 
+use Imagine\Image\Box;
+use Imagine\Image\ImageInterface;
+
 class ResizeImage extends Generator
 {
     /**
