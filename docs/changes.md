@@ -5,6 +5,10 @@ title: Imagine Change Log
 
 ## Version 3.2 {#v3-2}
 
+### v3.2.1 {#v3-2-1}
+
+* Fixes missing import under `Orchestra\Imagine\Jobs\ResizeImage`.
+
 ### v3.2.0 {#v3-2-0}
 
 * Update support to Laravel Framework v5.2.
@@ -13,6 +17,10 @@ title: Imagine Change Log
 * Create dispatchable job that you can use to resize an image via `Orchestra\Imagine\Jobs\ResizeImage`.
 
 ## Version 3.1 {#v3-1}
+
+### v3.1.3 {#v3-1-3}
+
+* Fixes missing import under `Orchestra\Imagine\Jobs\ResizeImage`.
 
 ### v3.1.2 {#v3-1-2}
 
