@@ -8,6 +8,7 @@ title: Imagine Change Log
 ### v3.2.1 {#v3-2-1}
 
 * Fixes missing import under `Orchestra\Imagine\Jobs\ResizeImage`.
+* Remove deprecated use of `Illuminate\Contracts\Bus\SelfHandling`.
 
 ### v3.2.0 {#v3-2-0}
 
