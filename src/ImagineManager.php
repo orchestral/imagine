@@ -1,4 +1,6 @@
-<?php namespace Orchestra\Imagine;
+<?php
+
+namespace Orchestra\Imagine;
 
 use Illuminate\Support\Arr;
 use Imagine\Gd\Imagine as Gd;

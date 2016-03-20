@@ -1,4 +1,6 @@
-<?php namespace Orchestra\Imagine;
+<?php
+
+namespace Orchestra\Imagine;
 
 use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Foundation\Application;

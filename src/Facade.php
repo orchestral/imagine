@@ -1,4 +1,6 @@
-<?php namespace Orchestra\Imagine;
+<?php
+
+namespace Orchestra\Imagine;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

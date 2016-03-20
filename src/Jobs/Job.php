@@ -1,4 +1,6 @@
-<?php namespace Orchestra\Imagine\Jobs;
+<?php
+
+namespace Orchestra\Imagine\Jobs;
 
 use Illuminate\Bus\Queueable;
 
