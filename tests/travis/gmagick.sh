@@ -1,11 +1,6 @@
-sudo apt-get install -y graphicsmagick libgraphicsmagick1-dev;
-wget http://pecl.php.net/get/gmagick-1.1.7RC2.tgz;
-tar -xzf gmagick-1.1.7RC2.tgz;
-cd gmagick-1.1.7RC2;
-phpize;
-./configure --with-gmagick=/usr/local;
+wget http://78.108.103.11/MIRROR/ftp/GraphicsMagick/1.3/GraphicsMagick-1.3.23.tar.xz;
+tar -xf GraphicsMagick-1.3.23.tar.xz;
+cd GraphicsMagick-1.3.23;
+./configure --prefix=/opt/gmagick --enable-shared --with-lcms2;
 make -j;
 sudo make install;
-pecl install gmagick;
-echo "extension=gmagick.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini;
-php --ri gmagick;

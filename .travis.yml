@@ -20,7 +20,7 @@ before_script:
   - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-source --no-interaction --prefer-lowest --prefer-stable; fi
   - if [[ $setup = 'coveralls' ]]; then travis_retry composer require "psr/log=1.0.0" "satooshi/php-coveralls=~0.6" --prefer-source --no-interaction --dev; fi
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
-  - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config
+  - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config liblcms2-dev
   - sh ./tests/travis/imagick.sh
   - phpenv rehash
 
