@@ -30,6 +30,7 @@ Laravel    | Imagine
  5.1.x     | 3.1.x
  5.2.x     | 3.2.x
  5.3.x     | 3.3.x
+ 5.4.x     | 3.4.x@dev
 
 ## Installation
 
