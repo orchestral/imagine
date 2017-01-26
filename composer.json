@@ -17,8 +17,8 @@
         "orchestra/support-providers": "~3.4.0"
     },
     "require-dev": {
-        "mockery/mockery": "^0.9.4",
         "illuminate/container": "~5.4.0",
+        "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "~5.0"
     },
     "autoload": {
@@ -30,6 +30,9 @@
         "branch-alias": {
             "dev-master": "3.4-dev"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev"
 }
