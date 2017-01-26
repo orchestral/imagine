@@ -42,6 +42,4 @@ matrix:
   allow_failures:
     - env: setup=stable
     - env: setup=coveralls coverage=yes
-    - php: 7.0
-    - php: 7.1
   fast_finish: true
