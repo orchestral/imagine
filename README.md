@@ -1,8 +1,6 @@
 Imagine (Wrapper) Component for Laravel 5
 ==============
 
-[![Join the chat at https://gitter.im/orchestral/platform/components](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orchestral/platform/components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
 [![Latest Stable Version](https://img.shields.io/github/release/orchestral/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
@@ -30,7 +28,7 @@ Laravel    | Imagine
  5.1.x     | 3.1.x
  5.2.x     | 3.2.x
  5.3.x     | 3.3.x
- 5.4.x     | 3.4.x@dev
+ 5.4.x     | 3.4.x
 
 ## Installation
 
