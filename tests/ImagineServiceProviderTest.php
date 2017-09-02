@@ -1,10 +1,11 @@
 <?php namespace Orchestra\Imagine\TestCase;
 
 use Mockery as m;
+use PHPUnit\Framework\TestCase;
 use Illuminate\Container\Container;
 use Orchestra\Imagine\ImagineServiceProvider;
 
-class ImagineServiceProviderTest extends \PHPUnit_Framework_TestCase
+class ImagineServiceProviderTest extends TestCase
 {
     /**
      * Teardown the test environment.
