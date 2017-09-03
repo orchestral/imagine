@@ -39,12 +39,15 @@ after_script:
 matrix:
   include:
     - php: 7.0
-      env: setup=lowest
+      env: setup=lowest IMAGINE_DRIVER=imagick
     - php: 7.0
-      env: setup=stable
+      env: setup=lowest IMAGINE_DRIVER=gmagick
     - php: 7.0
-      env: setup=coveralls coverage=yes
+      env: setup=stable IMAGINE_DRIVER=imagick
+    - php: 7.0
+      env: setup=stable IMAGINE_DRIVER=gmagick
+    - php: 7.0
+      env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   allow_failures:
-    - env: setup=stable
-    - env: setup=coveralls coverage=yes
+    - env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   fast_finish: true
