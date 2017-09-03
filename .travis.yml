@@ -10,13 +10,17 @@ env:
   global:
     - setup=basic
     - coverage=no
+  matrix:
+    - IMAGINE_DRIVER=imagick
+    - IMAGINE_DRIVER=gmagick
 
 before_install:
   - travis_retry composer self-update
   - composer config discard-changes true
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config liblcms2-dev
-  - sh ./tests/travis/imagick.sh
+  - sh -e -c " if [ '$IMAGINE_DRIVER' = 'imagick' ]; then bash ./.travis/imagick.sh; fi"
+  - sh -e -c " if [ '$IMAGINE_DRIVER' = 'gmagick' ]; then bash ./.travis/gmagick.sh; fi"
   - phpenv rehash
 
 before_script:
