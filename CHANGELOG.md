@@ -4,7 +4,7 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 ## 3.5.0
 
-Released: 2017-08-03
+Released: 2017-09-03
 
 ### Changes
 
