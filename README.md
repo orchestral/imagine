@@ -3,12 +3,10 @@ Imagine (Wrapper) Component for Laravel 5
 
 Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
-[![Latest Stable Version](https://img.shields.io/github/release/orchestral/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
-[![Total Downloads](https://img.shields.io/packagist/dt/orchestra/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
-[![MIT License](https://img.shields.io/packagist/l/orchestra/imagine.svg?style=flat-square)](https://packagist.org/packages/orchestra/imagine)
-[![Build Status](https://img.shields.io/travis/orchestral/imagine/master.svg?style=flat-square)](https://travis-ci.org/orchestral/imagine)
-[![Coverage Status](https://img.shields.io/coveralls/orchestral/imagine/master.svg?style=flat-square)](https://coveralls.io/r/orchestral/imagine?branch=master)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/imagine/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/orchestral/imagine/)
+[![Build Status](https://travis-ci.org/orchestral/imagine.svg?branch=master)](https://travis-ci.org/orchestral/imagine)
+[![Latest Stable Version](https://poser.pugx.org/orchestra/imagine/v/stable)](https://packagist.org/packages/orchestra/imagine)
+[![Total Downloads](https://poser.pugx.org/orchestra/imagine/downloads)](https://packagist.org/packages/orchestra/imagine)
+[![License](https://poser.pugx.org/orchestra/imagine/license)](https://packagist.org/packages/orchestra/imagine)
 
 ## Table of Content
 
@@ -16,14 +14,13 @@ Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https:/
 * [Installation](#installation)
 * [Configuration](#configuration)
 * [Usage](#usage)
+* [Changelog](https://github.com/orchestral/imagine/releases)
 
 ## Version Compatibility
 
 Laravel    | Imagine
 :----------|:----------
- 4.0.x     | 2.0.x
- 4.1.x     | 2.1.x
- 4.2.x     | 2.2.x
+ 4.x.x     | 2.x.x
  5.0.x     | 3.0.x
  5.1.x     | 3.1.x
  5.2.x     | 3.2.x
@@ -82,20 +79,13 @@ Here a simple example how to create a thumbnail from an image:
 ```php
 <?php
 
-use Imagine\Image\Box;
 use Imagine\Image\ImageInterface;
-use Orchestra\Imagine\Facade as Imagine;
+use Orchestra\Imagine\Jobs\CreateThumbnail;
 
-function create_thumbnail($path, $filename, $extension)
-{
-    $width  = 320;
-    $height = 320;
-    $mode   = ImageInterface::THUMBNAIL_OUTBOUND;
-    $size   = new Box($width, $height);
-
-    $thumbnail   = Imagine::open("{$path}/{$filename}.{$extension}")->thumbnail($size, $mode);
-    $destination = "{$filename}.thumb.{$extension}";
-
-    $thumbnail->save("{$path}/{$destination}");
-}
+dispatch(new CreateThumbnail([
+    'path' => "{$path}/{$filename}.{$extension}",
+    'dimension' => 320, // width and height will be 320.
+    'mode' => ImageInterface::THUMBNAIL_OUTBOUND,
+    'filter' => ImageInterface::FILTER_UNDEFINED,
+]));
 ```

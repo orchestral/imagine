@@ -2,7 +2,9 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/imagine`.
 
-## 3.4.0 - 2017-01-27
+## 3.4.0
+
+Released: 2017-01-27
 
 ### Changes
 
