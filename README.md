@@ -84,7 +84,10 @@ use Imagine\Image\ImageInterface;
 use Orchestra\Imagine\Jobs\CreateThumbnail;
 
 dispatch(new CreateThumbnail([
-    'path' => "{$path}/{$filename}.{$extension}",
+    'path' => $path,
+    'filename' => $filename, // filename without extension
+    'extension' => $extension,
+    'format' => '{filename}.thumb.{extension}',
     'dimension' => 320, // width and height will be 320.
     'mode' => ImageInterface::THUMBNAIL_OUTBOUND,
     'filter' => ImageInterface::FILTER_UNDEFINED,

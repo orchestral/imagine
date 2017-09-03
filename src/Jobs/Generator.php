@@ -36,7 +36,7 @@ abstract class Generator extends Job
     public function handle(ImagineInterface $imagine)
     {
         $data = $this->getFilteredOptions($this->options);
-        $path = $data['path'];
+        $path = rtrim($data['path'], '/');
 
         $source      = Str::replace('{filename}.{extension}', $data);
         $destination = Str::replace($data['format'], $data);
