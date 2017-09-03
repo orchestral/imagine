@@ -35,9 +35,9 @@ To install through composer, simply put the following in your `composer.json` fi
 
 ```json
 {
-	"require": {
-		"orchestra/imagine": "~3.0"
-	}
+    "require": {
+        "orchestra/imagine": "~3.0"
+    }
 }
 ```
 
@@ -47,7 +47,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-	composer require "orchestra/imagine=~3.0"
+    composer require "orchestra/imagine=~3.0"
 
 ## Configuration
 
@@ -56,9 +56,9 @@ Add `Orchestra\Imagine\ImagineServiceProvider` service provider in `config/app.p
 ```php
 'providers' => [
 
-	// ...
+    // ...
 
-	Orchestra\Imagine\ImagineServiceProvider::class,
+    Orchestra\Imagine\ImagineServiceProvider::class,
 ],
 ```
 
@@ -67,9 +67,9 @@ Add `Imagine` alias in `config/app.php`.
 ```php
 'aliases' => [
 
-	// ...
+    // ...
 
-	'Imagine' => Orchestra\Imagine\Facade::class,
+    'Imagine' => Orchestra\Imagine\Facade::class,
 ],
 ```
 
