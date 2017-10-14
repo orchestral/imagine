@@ -31,9 +31,9 @@ class CreateThumbnail extends Generator
     {
         return [
             'dimension' => 200,
-            'filter'    => ImageInterface::FILTER_UNDEFINED,
-            'format'    => '{filename}.thumb.{extension}',
-            'mode'      => ImageInterface::THUMBNAIL_OUTBOUND,
+            'filter' => ImageInterface::FILTER_UNDEFINED,
+            'format' => '{filename}.thumb.{extension}',
+            'mode' => ImageInterface::THUMBNAIL_OUTBOUND,
         ];
     }
 }
