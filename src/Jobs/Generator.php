@@ -38,7 +38,7 @@ abstract class Generator extends Job
         $data = $this->getFilteredOptions($this->options);
         $path = rtrim($data['path'], '/');
 
-        $source      = Str::replace('{filename}.{extension}', $data);
+        $source = Str::replace('{filename}.{extension}', $data);
         $destination = Str::replace($data['format'], $data);
 
         $this->handleImageManipulation($imagine->open("{$path}/{$source}"), $data)

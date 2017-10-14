@@ -17,7 +17,7 @@ class ResizeImage extends Generator
      */
     protected function handleImageManipulation(ImageInterface $image, array $data)
     {
-        $width  = $data['width'];
+        $width = $data['width'];
         $height = $data['height'];
 
         if (isset($data['dimension'])) {
@@ -36,11 +36,11 @@ class ResizeImage extends Generator
     {
         return [
             'dimension' => null,
-            'filter'    => ImageInterface::FILTER_UNDEFINED,
-            'format'    => '{filename}.{width}x{height}.{extension}',
-            'name'      => null,
-            'width'     => 320,
-            'height'    => 320,
+            'filter' => ImageInterface::FILTER_UNDEFINED,
+            'format' => '{filename}.{width}x{height}.{extension}',
+            'name' => null,
+            'width' => 320,
+            'height' => 320,
         ];
     }
 }
