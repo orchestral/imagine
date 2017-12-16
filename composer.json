@@ -30,6 +30,14 @@
         "branch-alias": {
             "dev-master": "3.6-dev"
         }
+        "laravel": {
+            "providers": [
+                "Orchestra\\Imagine\\ImagineServiceProvider"
+            ],
+            "aliases": {
+                "Orchestra\\Imagine\\Facade"
+            }
+        }
     },
     "config": {
         "sort-packages": true
