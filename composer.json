@@ -35,7 +35,7 @@
                 "Orchestra\\Imagine\\ImagineServiceProvider"
             ],
             "aliases": {
-                "Orchestra\\Imagine\\Facade"
+                "Imagine":"Orchestra\\Imagine\\Facade"
             }
         }
     },
