@@ -6,6 +6,11 @@ php:
   - 7.1
   - 7.2
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - cache
+
 env:
   global:
     - setup=basic
@@ -15,12 +20,15 @@ env:
     - IMAGINE_DRIVER=gmagick
 
 before_install:
+  - phpenv config-rm xdebug.ini || true
   - travis_retry composer self-update
   - composer config discard-changes true
+
+install:
   - sudo apt-get remove -y imagemagick libmagickcore-dev libmagickwand-dev
   - sudo apt-get install -y libtiff-dev libjpeg-dev libdjvulibre-dev libwmf-dev pkg-config liblcms2-dev
-  - sh -e -c " if [ '$IMAGINE_DRIVER' = 'imagick' ]; then bash ./.travis/imagick.sh; fi"
-  - sh -e -c " if [ '$IMAGINE_DRIVER' = 'gmagick' ]; then bash ./.travis/gmagick.sh; fi"
+  - if [[ $IMAGINE_DRIVER = imagick ]]; then ./.travis/imagick.sh; fi
+  - if [[ $IMAGINE_DRIVER = gmagick ]]; then ./.travis/gmagick.sh; fi
   - phpenv rehash
 
 before_script:
@@ -38,15 +46,15 @@ after_script:
 
 matrix:
   include:
-    - php: 7.0
+    - php: 7.1
       env: setup=lowest IMAGINE_DRIVER=imagick
-    - php: 7.0
+    - php: 7.1
       env: setup=lowest IMAGINE_DRIVER=gmagick
-    - php: 7.0
+    - php: 7.1
       env: setup=stable IMAGINE_DRIVER=imagick
-    - php: 7.0
+    - php: 7.1
       env: setup=stable IMAGINE_DRIVER=gmagick
-    - php: 7.0
+    - php: 7.1
       env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   allow_failures:
     - env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
