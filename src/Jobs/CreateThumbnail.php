@@ -15,7 +15,7 @@ class CreateThumbnail extends Generator
      *
      * @return \Imagine\Image\ImageInterface
      */
-    protected function handleImageManipulation(ImageInterface $image, array $data)
+    protected function handleImageManipulation(ImageInterface $image, array $data): ImageInterface
     {
         $width = $height = $data['dimension'];
 
@@ -27,7 +27,7 @@ class CreateThumbnail extends Generator
      *
      * @return array
      */
-    protected function getDefaultOptions()
+    protected function getDefaultOptions(): array
     {
         return [
             'dimension' => 200,

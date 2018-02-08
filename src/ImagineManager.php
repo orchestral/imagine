@@ -22,7 +22,7 @@ class ImagineManager extends Manager
      *
      * @return \Imagine\Gd\Imagine
      */
-    protected function createGdDriver()
+    protected function createGdDriver(): Gd
     {
         return new Gd();
     }
@@ -32,7 +32,7 @@ class ImagineManager extends Manager
      *
      * @return \Imagine\Gmagick\Imagine
      */
-    protected function createGmagickDriver()
+    protected function createGmagickDriver(): Gmagick
     {
         return new Gmagick();
     }
@@ -42,7 +42,7 @@ class ImagineManager extends Manager
      *
      * @return \Imagine\Imagick\Imagine
      */
-    protected function createImagickDriver()
+    protected function createImagickDriver(): Imagick
     {
         return new Imagick();
     }
@@ -54,7 +54,7 @@ class ImagineManager extends Manager
      */
     public function getDefaultDriver()
     {
-        return Arr::get($this->config, 'driver', 'gd');
+        return $this->config['driver'] ?? 'gd';
     }
 
     /**
@@ -74,7 +74,7 @@ class ImagineManager extends Manager
      *
      * @return array
      */
-    public function getConfig()
+    public function getConfig(): array
     {
         return $this->config;
     }
@@ -86,7 +86,7 @@ class ImagineManager extends Manager
      *
      * @return $this
      */
-    public function setConfig(array $config)
+    public function setConfig(array $config): self
     {
         $this->config = $config;
 

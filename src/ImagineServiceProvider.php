@@ -71,7 +71,7 @@ class ImagineServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function bootUsingLaravel($path)
+    protected function bootUsingLaravel(string $path): void
     {
         $this->mergeConfigFrom("{$path}/config/config.php", 'orchestra.imagine');
 

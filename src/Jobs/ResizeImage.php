@@ -15,7 +15,7 @@ class ResizeImage extends Generator
      *
      * @return \Imagine\Image\ImageInterface
      */
-    protected function handleImageManipulation(ImageInterface $image, array $data)
+    protected function handleImageManipulation(ImageInterface $image, array $data): ImageInterface
     {
         $width = $data['width'];
         $height = $data['height'];
@@ -32,7 +32,7 @@ class ResizeImage extends Generator
      *
      * @return array
      */
-    protected function getDefaultOptions()
+    protected function getDefaultOptions(): array
     {
         return [
             'dimension' => null,

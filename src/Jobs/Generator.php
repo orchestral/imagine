@@ -77,12 +77,12 @@ abstract class Generator extends Job
      *
      * @return \Imagine\Image\ImageInterface
      */
-    abstract protected function handleImageManipulation(ImageInterface $image, array $data);
+    abstract protected function handleImageManipulation(ImageInterface $image, array $data): ImageInterface;
 
     /**
      * Get default options.
      *
      * @return array
      */
-    abstract protected function getDefaultOptions();
+    abstract protected function getDefaultOptions(): array;
 }
