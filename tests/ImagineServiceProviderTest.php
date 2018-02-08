@@ -17,13 +17,8 @@ class ImagineServiceProviderTest extends TestCase
         m::close();
     }
 
-    /**
-     * Test Orchestra\Imagine\ImagineServiceProvider::register() method
-     * register instance of "orchestra.imagine".
-     *
-     * @test
-     */
-    public function testRegisterMethod()
+    /** @test */
+    public function it_can_register_expected_services()
     {
         $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
@@ -38,12 +33,10 @@ class ImagineServiceProviderTest extends TestCase
     }
 
     /**
-     * Test Orchestra\Imagine\ImagineServiceProvider::boot() method.
-     *
      * @test
      * @requires extension gd
      */
-    public function testBootMethodWithGdDriver()
+    public function it_can_boot_using_gd()
     {
         $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
@@ -71,12 +64,10 @@ class ImagineServiceProviderTest extends TestCase
     }
 
     /**
-     * Test Orchestra\Imagine\ImagineServiceProvider::boot() method.
-     *
      * @test
      * @requires extension imagick
      */
-    public function testBootMethodWithImagickDriver()
+    public function it_can_boot_using_imagick()
     {
         $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
@@ -104,12 +95,10 @@ class ImagineServiceProviderTest extends TestCase
     }
 
     /**
-     * Test Orchestra\Imagine\ImagineServiceProvider::boot() method.
-     *
      * @test
      * @requires extension gmagick
      */
-    public function testBootMethodWithGmagickDriver()
+    public function it_can_boot_using_gmagick()
     {
         $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
@@ -136,12 +125,8 @@ class ImagineServiceProviderTest extends TestCase
         $this->assertInstanceOf('\Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver('gmagick'));
     }
 
-    /**
-     * Test Orchestra\Imagine\ImagineServiceProvider::provides() method.
-     *
-     * @test
-     */
-    public function testProvidesMethod()
+    /** @test */
+    public function it_provides_expected_services()
     {
         $app = new Container();
 
