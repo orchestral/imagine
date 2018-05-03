@@ -86,7 +86,7 @@ class ImagineManager extends Manager
      *
      * @return $this
      */
-    public function setConfig(array $config): self
+    public function setConfig(array $config)
     {
         $this->config = $config;
 
