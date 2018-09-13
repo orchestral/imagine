@@ -29,7 +29,7 @@ Laravel    | Imagine
  5.4.x     | 3.4.x
  5.5.x     | 3.5.x
  5.6.x     | 3.6.x
- 5.7.x     | 3.7.x@dev
+ 5.7.x     | 3.7.x
 
 ## Installation
 
@@ -38,7 +38,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require": {
-        "orchestra/imagine": "~3.0"
+        "orchestra/imagine": "^3.0"
     }
 }
 ```
@@ -49,7 +49,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-    composer require "orchestra/imagine=~3.0"
+    composer require "orchestra/imagine=^3.0"
 
 ## Configuration
 
