@@ -60,4 +60,5 @@ matrix:
       env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   allow_failures:
     - env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
+    - php: nightly
   fast_finish: true
