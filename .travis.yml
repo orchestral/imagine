@@ -20,6 +20,10 @@ env:
   matrix:
     - IMAGINE_DRIVER=imagick
     - IMAGINE_DRIVER=gmagick
+    - setup=lowest IMAGINE_DRIVER=imagick
+    - setup=lowest IMAGINE_DRIVER=gmagick
+    - setup=stable IMAGINE_DRIVER=imagick
+    - setup=stable IMAGINE_DRIVER=gmagick
 
 before_install:
   - phpenv config-rm xdebug.ini || true
@@ -49,16 +53,8 @@ after_script:
 matrix:
   include:
     - php: 7.1
-      env: setup=lowest IMAGINE_DRIVER=imagick
-    - php: 7.1
-      env: setup=lowest IMAGINE_DRIVER=gmagick
-    - php: 7.1
-      env: setup=stable IMAGINE_DRIVER=imagick
-    - php: 7.1
-      env: setup=stable IMAGINE_DRIVER=gmagick
-    - php: 7.1
       env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   allow_failures:
-    - env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
     - php: nightly
+    - env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   fast_finish: true
