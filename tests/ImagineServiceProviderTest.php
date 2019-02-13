@@ -12,7 +12,7 @@ class ImagineServiceProviderTest extends TestCase
     /**
      * Teardown the test environment.
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
