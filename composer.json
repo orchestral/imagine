@@ -11,13 +11,13 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "imagine/imagine": "^1.0",
-        "orchestra/support-core": "~3.8.0",
-        "orchestra/support-providers": "~3.8.0"
+        "php": ">=7.2",
+        "imagine/imagine": "^1.2",
+        "orchestra/support-core": "~3.9.0",
+        "orchestra/support-providers": "~3.9.0"
     },
     "require-dev": {
-        "illuminate/container": "~5.8.0",
+        "illuminate/container": "~5.9.0",
         "mockery/mockery": "^1.0",
         "phpunit/phpunit": "^7.5 || ^8.0"
     },
