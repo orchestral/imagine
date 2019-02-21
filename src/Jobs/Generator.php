@@ -36,13 +36,14 @@ abstract class Generator extends Job
     public function handle(ImagineInterface $imagine)
     {
         $data = $this->getFilteredOptions($this->options);
-        $path = rtrim($data['path'], '/');
+        $path = \rtrim($data['path'], '/');
 
         $source = Str::replace('{filename}.{extension}', $data);
         $destination = Str::replace($data['format'], $data);
 
-        $this->handleImageManipulation($imagine->open("{$path}/{$source}"), $data)
-            ->save("{$path}/{$destination}");
+        $this->handleImageManipulation(
+            $imagine->open("{$path}/{$source}"), $data
+        )->save("{$path}/{$destination}");
     }
 
     /**
@@ -55,14 +56,11 @@ abstract class Generator extends Job
     protected function getFilteredOptions(array $options)
     {
         $default = $this->getDefaultOptions();
-        $options = array_merge($default, $options);
+        $options = \array_merge($default, $options);
 
-        $uses = array_unique(array_merge([
-            'path',
-            'filename',
-            'extension',
-            'format',
-        ], array_keys($default)));
+        $uses = \array_unique(\array_merge([
+            'path', 'filename', 'extension', 'format',
+        ], \array_keys($default)));
 
         $data = Arr::only($options, $uses);
 
