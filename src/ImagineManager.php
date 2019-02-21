@@ -2,7 +2,6 @@
 
 namespace Orchestra\Imagine;
 
-use Illuminate\Support\Arr;
 use Imagine\Gd\Imagine as Gd;
 use Illuminate\Support\Manager;
 use Imagine\Gmagick\Imagine as Gmagick;

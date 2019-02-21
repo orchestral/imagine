@@ -55,7 +55,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = realpath(__DIR__.'/../resources');
+        $path = \realpath(__DIR__.'/../resources');
 
         $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', "{$path}/config");
 
@@ -76,7 +76,7 @@ class ImagineServiceProvider extends ServiceProvider
         $this->mergeConfigFrom("{$path}/config/config.php", 'orchestra.imagine');
 
         $this->publishes([
-            "{$path}/config/config.php" => config_path('orchestra/imagine.php'),
+            "{$path}/config/config.php" => \config_path('orchestra/imagine.php'),
         ]);
     }
 
