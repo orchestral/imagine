@@ -6,8 +6,9 @@ use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Orchestra\Support\Providers\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Contracts\Support\RegistrableProvider;
 
-class ImagineServiceProvider extends ServiceProvider implements DeferrableProvider
+class ImagineServiceProvider extends ServiceProvider implements DeferrableProvider, RegistrableProvider
 {
     /**
      * Register the service provider.
@@ -33,7 +34,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
      *
      * @return void
      */
-    protected function registerCoreContainerAliases()
+    protected function registerCoreContainerAliases(): void
     {
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
