@@ -5,16 +5,11 @@ namespace Orchestra\Imagine;
 use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Orchestra\Support\Providers\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Contracts\Support\RegistrableProvider;
 
-class ImagineServiceProvider extends ServiceProvider
+class ImagineServiceProvider extends ServiceProvider implements DeferrableProvider, RegistrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Register the service provider.
      *
@@ -39,7 +34,7 @@ class ImagineServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerCoreContainerAliases()
+    protected function registerCoreContainerAliases(): void
     {
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
@@ -55,7 +50,7 @@ class ImagineServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = realpath(__DIR__.'/../resources');
+        $path = \realpath(__DIR__.'/../resources');
 
         $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', "{$path}/config");
 
@@ -76,7 +71,7 @@ class ImagineServiceProvider extends ServiceProvider
         $this->mergeConfigFrom("{$path}/config/config.php", 'orchestra.imagine');
 
         $this->publishes([
-            "{$path}/config/config.php" => config_path('orchestra/imagine.php'),
+            "{$path}/config/config.php" => \config_path('orchestra/imagine.php'),
         ]);
     }
 
