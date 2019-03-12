@@ -20,8 +20,8 @@ class ImagineServiceProviderTest extends TestCase
     /** @test */
     public function it_can_register_expected_services()
     {
-        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
-        $config = m::mock('\Illuminate\Contracts\Config\Repository');
+        $app = m::mock('Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
+        $config = m::mock('Illuminate\Contracts\Config\Repository');
         $app->instance('config', $config);
 
         $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn([]);
@@ -29,7 +29,7 @@ class ImagineServiceProviderTest extends TestCase
         $stub = new ImagineServiceProvider($app);
         $stub->register();
 
-        $this->assertInstanceOf('\Orchestra\Imagine\ImagineManager', $app['orchestra.imagine']);
+        $this->assertInstanceOf('Orchestra\Imagine\ImagineManager', $app['orchestra.imagine']);
     }
 
     /**
@@ -38,9 +38,9 @@ class ImagineServiceProviderTest extends TestCase
      */
     public function it_can_boot_using_gd()
     {
-        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
-        $config = m::mock('\Illuminate\Contracts\Config\Repository');
-        $files = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app = m::mock('Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
+        $config = m::mock('Illuminate\Contracts\Config\Repository');
+        $files = m::mock('Illuminate\Filesystem\Filesystem');
 
         $app->instance('config', $config);
         $app->instance('files', $files);
@@ -50,7 +50,7 @@ class ImagineServiceProviderTest extends TestCase
         $files->shouldReceive('isDirectory')->andReturn(false);
         $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn(['driver' => 'gd']);
 
-        $stub = m::mock('\Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
+        $stub = m::mock('Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
                     ->shouldAllowMockingProtectedMethods();
 
         $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../'))->andReturnNull();
@@ -58,9 +58,9 @@ class ImagineServiceProviderTest extends TestCase
         $stub->register();
         $stub->boot();
 
-        $this->assertInstanceOf('\Imagine\Gd\Imagine', $app->make('Imagine\Image\ImagineInterface'));
-        $this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver());
-        $this->assertInstanceOf('\Imagine\Gd\Imagine', $app['orchestra.imagine']->driver('gd'));
+        $this->assertInstanceOf('Imagine\Gd\Imagine', $app->make('Imagine\Image\ImagineInterface'));
+        $this->assertInstanceOf('Imagine\Gd\Imagine', $app['orchestra.imagine']->driver());
+        $this->assertInstanceOf('Imagine\Gd\Imagine', $app['orchestra.imagine']->driver('gd'));
     }
 
     /**
@@ -69,9 +69,9 @@ class ImagineServiceProviderTest extends TestCase
      */
     public function it_can_boot_using_imagick()
     {
-        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
-        $config = m::mock('\Illuminate\Contracts\Config\Repository');
-        $files = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app = m::mock('Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
+        $config = m::mock('Illuminate\Contracts\Config\Repository');
+        $files = m::mock('Illuminate\Filesystem\Filesystem');
 
         $app->instance('config', $config);
         $app->instance('files', $files);
@@ -81,17 +81,17 @@ class ImagineServiceProviderTest extends TestCase
         $files->shouldReceive('isDirectory')->andReturn(false);
         $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn(['driver' => 'imagick']);
 
-        $stub = m::mock('\Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
+        $stub = m::mock('Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
                     ->shouldAllowMockingProtectedMethods();
 
-        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../resources'))->andReturnNull();
+        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../'))->andReturnNull();
 
         $stub->register();
         $stub->boot();
 
-        $this->assertInstanceOf('\Imagine\Imagick\Imagine', $app->make('Imagine\Image\ImagineInterface'));
-        $this->assertInstanceOf('\Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver());
-        $this->assertInstanceOf('\Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver('imagick'));
+        $this->assertInstanceOf('Imagine\Imagick\Imagine', $app->make('Imagine\Image\ImagineInterface'));
+        $this->assertInstanceOf('Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver());
+        $this->assertInstanceOf('Imagine\Imagick\Imagine', $app['orchestra.imagine']->driver('imagick'));
     }
 
     /**
@@ -100,9 +100,9 @@ class ImagineServiceProviderTest extends TestCase
      */
     public function it_can_boot_using_gmagick()
     {
-        $app = m::mock('\Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
-        $config = m::mock('\Illuminate\Contracts\Config\Repository');
-        $files = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app = m::mock('Illuminate\Container\Container, \Illuminate\Contracts\Foundation\Application')->makePartial();
+        $config = m::mock('Illuminate\Contracts\Config\Repository');
+        $files = m::mock('Illuminate\Filesystem\Filesystem');
 
         $app->instance('config', $config);
         $app->instance('files', $files);
@@ -112,17 +112,17 @@ class ImagineServiceProviderTest extends TestCase
         $files->shouldReceive('isDirectory')->andReturn(false);
         $config->shouldReceive('get')->once()->with('orchestra.imagine')->andReturn(['driver' => 'gmagick']);
 
-        $stub = m::mock('\Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
+        $stub = m::mock('Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
                     ->shouldAllowMockingProtectedMethods();
 
-        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../resources'))->andReturnNull();
+        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../'))->andReturnNull();
 
         $stub->register();
         $stub->boot();
 
-        $this->assertInstanceOf('\Imagine\Gmagick\Imagine', $app->make('Imagine\Image\ImagineInterface'));
-        $this->assertInstanceOf('\Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver());
-        $this->assertInstanceOf('\Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver('gmagick'));
+        $this->assertInstanceOf('Imagine\Gmagick\Imagine', $app->make('Imagine\Image\ImagineInterface'));
+        $this->assertInstanceOf('Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver());
+        $this->assertInstanceOf('Imagine\Gmagick\Imagine', $app['orchestra.imagine']->driver('gmagick'));
     }
 
     /** @test */
