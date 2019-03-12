@@ -53,7 +53,7 @@ class ImagineServiceProviderTest extends TestCase
         $stub = m::mock('\Orchestra\Imagine\ImagineServiceProvider[bootUsingLaravel]', [$app])
                     ->shouldAllowMockingProtectedMethods();
 
-        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../resources'))->andReturnNull();
+        $stub->shouldReceive('bootUsingLaravel')->once()->with(realpath(__DIR__.'/../'))->andReturnNull();
 
         $stub->register();
         $stub->boot();

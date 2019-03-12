@@ -49,7 +49,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
      */
     public function boot()
     {
-        $path = \realpath(__DIR__.'/../resources');
+        $path = \realpath(__DIR__.'/../');
 
         $this->addConfigComponent('orchestra/imagine', 'orchestra/imagine', "{$path}/config");
 
