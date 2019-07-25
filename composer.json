@@ -13,8 +13,8 @@
     "require": {
         "php": ">=7.2",
         "imagine/imagine": "^1.2",
-        "orchestra/support-core": "~3.10.0",
-        "orchestra/support-providers": "~3.10.0"
+        "orchestra/support-core": "^4.0",
+        "orchestra/support-providers": "^4.0"
     },
     "require-dev": {
         "illuminate/container": "dev-master",
@@ -28,7 +28,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.10-dev"
+            "dev-master": "4.0-dev"
         }
     },
     "config": {

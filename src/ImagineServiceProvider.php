@@ -37,7 +37,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
     {
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
-        $this->app->bind(ImagineInterface::class, function (Application $app) {
+        $this->app->bind(ImagineInterface::class, static function (Application $app) {
             return $app->make('orchestra.imagine')->driver();
         });
     }
