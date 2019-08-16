@@ -3,7 +3,7 @@
 namespace Orchestra\Imagine;
 
 use Imagine\Image\ImagineInterface;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Orchestra\Support\Providers\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
@@ -16,7 +16,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
      */
     public function register()
     {
-        $this->app->singleton('orchestra.imagine', function (Application $app) {
+        $this->app->singleton('orchestra.imagine', function (Container $app) {
             $manager = new ImagineManager($app);
             $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
 
@@ -37,7 +37,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
     {
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
-        $this->app->bind(ImagineInterface::class, static function (Application $app) {
+        $this->app->bind(ImagineInterface::class, static function (Container $app) {
             return $app->make('orchestra.imagine')->driver();
         });
     }
