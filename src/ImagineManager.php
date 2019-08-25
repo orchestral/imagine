@@ -6,9 +6,12 @@ use Imagine\Gd\Imagine as Gd;
 use Illuminate\Support\Manager;
 use Imagine\Gmagick\Imagine as Gmagick;
 use Imagine\Imagick\Imagine as Imagick;
+use Orchestra\Support\Concerns\WithConfiguration;
 
 class ImagineManager extends Manager
 {
+    use WithConfiguration;
+
     /**
      * Configuration values.
      *
@@ -53,7 +56,7 @@ class ImagineManager extends Manager
      */
     public function getDefaultDriver()
     {
-        return $this->config['driver'] ?? 'gd';
+        return $this->configurations['driver'] ?? 'gd';
     }
 
     /**
@@ -65,30 +68,6 @@ class ImagineManager extends Manager
      */
     public function setDefaultDriver($name)
     {
-        $this->config['driver'] = $name;
-    }
-
-    /**
-     * Get configuration values.
-     *
-     * @return array
-     */
-    public function getConfig(): array
-    {
-        return $this->config;
-    }
-
-    /**
-     * Set configuration.
-     *
-     * @param  array  $config
-     *
-     * @return $this
-     */
-    public function setConfig(array $config)
-    {
-        $this->config = $config;
-
-        return $this;
+        $this->configurations['driver'] = $name;
     }
 }

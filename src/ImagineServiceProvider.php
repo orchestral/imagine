@@ -20,7 +20,7 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
             $manager = new ImagineManager($app);
             $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
 
-            $manager->setConfig($app->make('config')->get($namespace));
+            $manager->setConfiguration($app->make('config')->get($namespace));
 
             return $manager;
         });
