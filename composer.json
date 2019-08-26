@@ -17,6 +17,7 @@
         "orchestra/support-providers": "^4.0"
     },
     "require-dev": {
+        "illuminate/bus": "^6.0",
         "illuminate/container": "^6.0",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^8.0"
