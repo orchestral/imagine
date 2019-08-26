@@ -13,13 +13,6 @@ class ImagineManager extends Manager
     use WithConfiguration;
 
     /**
-     * Configuration values.
-     *
-     * @var array
-     */
-    protected $config = [];
-
-    /**
      * Create an instance of the GD driver.
      *
      * @return \Imagine\Gd\Imagine
