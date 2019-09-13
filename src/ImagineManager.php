@@ -2,8 +2,8 @@
 
 namespace Orchestra\Imagine;
 
-use Imagine\Gd\Imagine as Gd;
 use Illuminate\Support\Manager;
+use Imagine\Gd\Imagine as Gd;
 use Imagine\Gmagick\Imagine as Gmagick;
 use Imagine\Imagick\Imagine as Imagick;
 use Orchestra\Support\Concerns\WithConfiguration;

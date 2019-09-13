@@ -2,10 +2,10 @@
 
 namespace Orchestra\Imagine\Jobs;
 
-use Orchestra\Support\Str;
 use Illuminate\Support\Arr;
 use Imagine\Image\ImageInterface;
 use Imagine\Image\ImagineInterface;
+use Orchestra\Support\Str;
 
 abstract class Generator extends Job
 {

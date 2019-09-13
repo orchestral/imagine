@@ -2,10 +2,10 @@
 
 namespace Orchestra\Imagine;
 
-use Imagine\Image\ImagineInterface;
 use Illuminate\Contracts\Container\Container;
-use Orchestra\Support\Providers\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Imagine\Image\ImagineInterface;
+use Orchestra\Support\Providers\ServiceProvider;
 
 class ImagineServiceProvider extends ServiceProvider implements DeferrableProvider
 {

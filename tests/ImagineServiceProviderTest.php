@@ -2,10 +2,10 @@
 
 namespace Orchestra\Imagine\Tests;
 
-use Mockery as m;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Container\Container;
+use Mockery as m;
 use Orchestra\Imagine\ImagineServiceProvider;
+use PHPUnit\Framework\TestCase;
 
 class ImagineServiceProviderTest extends TestCase
 {
