@@ -1,9 +1,10 @@
+dist: bionic
 language: php
-sudo: required
 
 php:
   - 7.2
   - 7.3
+  - 7.4
 
 cache:
   directories:
@@ -16,10 +17,10 @@ env:
   matrix:
     - setup=basic IMAGINE_DRIVER=imagick
     - setup=basic IMAGINE_DRIVER=gmagick
-    - setup=lowest IMAGINE_DRIVER=imagick
-    - setup=lowest IMAGINE_DRIVER=gmagick
     - setup=stable IMAGINE_DRIVER=imagick
     - setup=stable IMAGINE_DRIVER=gmagick
+    - setup=lowest IMAGINE_DRIVER=imagick
+    - setup=lowest IMAGINE_DRIVER=gmagick
 
 before_install:
   - phpenv config-rm xdebug.ini || true
@@ -34,14 +35,14 @@ install:
   - phpenv rehash
 
 before_script:
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --prefer-source --no-interaction --no-suggest; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-source --no-interaction --no-suggest --prefer-stable; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-source --no-interaction --no-suggest --prefer-lowest --prefer-stable; fi
-  - if [[ $setup = 'coveralls' ]]; then travis_retry composer require "php-coveralls/php-coveralls=^2.1" --prefer-source --no-interaction --no-suggest --dev; fi
+  - if [[ $setup = 'basic' ]]; then travis_retry composer install --prefer-dist --no-interaction --no-suggest; fi
+  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --no-suggest --prefer-stable; fi
+  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --no-suggest --prefer-lowest --prefer-stable; fi
+  - if [[ $setup = 'coveralls' ]]; then travis_retry composer require "php-coveralls/php-coveralls=^2.1" --prefer-dist --no-interaction --no-suggest --dev; fi
 
 script:
-  - if [[ $coverage = 'yes' ]]; then ./vendor/bin/phpunit -c phpunit.xml --coverage-clover build/logs/clover.xml; fi
-  - if [[ $coverage = 'no' ]]; then ./vendor/bin/phpunit -c phpunit.xml --testdox --verbose; fi
+  - if [[ $coverage = 'yes' ]]; then vendor/bin/phpunit -c phpunit.xml --coverage-clover build/logs/clover.xml; fi
+  - if [[ $coverage = 'no' ]]; then vendor/bin/phpunit -c phpunit.xml --verbose; fi
 
 after_script:
   - if [[ $setup = 'coveralls' ]]; then php vendor/bin/php-coveralls -v; fi
