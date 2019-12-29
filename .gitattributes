@@ -1,8 +1,8 @@
 * text=auto
 
 # Ignore following folder/file.
-/tests export-ignore
 /.github export-ignore
+/tests export-ignore
 /.travis export-ignore
 /.coveralls.yml export-ignore
 /.gitattributes export-ignore
