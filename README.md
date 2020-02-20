@@ -1,9 +1,9 @@
-Imagine (Wrapper) Component for Laravel 5
+Imagine (Wrapper) Component for Laravel
 ==============
 
-Imagine (Wrapper) Component is a Laravel 5 package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
+Imagine (Wrapper) Component is a Laravel package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
-[![Build Status](https://travis-ci.org/orchestral/imagine.svg?branch=master)](https://travis-ci.org/orchestral/imagine)
+[![Build Status](https://travis-ci.org/orchestral/imagine.svg?branch=5.x)](https://travis-ci.org/orchestral/imagine)
 [![Latest Stable Version](https://poser.pugx.org/orchestra/imagine/v/stable)](https://packagist.org/packages/orchestra/imagine)
 [![Total Downloads](https://poser.pugx.org/orchestra/imagine/downloads)](https://packagist.org/packages/orchestra/imagine)
 [![Latest Unstable Version](https://poser.pugx.org/orchestra/imagine/v/unstable)](//packagist.org/packages/orchestra/imagine)
@@ -26,26 +26,13 @@ Laravel    | Imagine
  5.7.x     | 3.7.x
  5.8.x     | 3.8.x
  6.x       | 4.x
+ 7.x       | 5.x
 
 ## Installation
 
-To install through composer, simply put the following in your `composer.json` file:
+To install through composer, run the following command from terminal:
 
-```json
-{
-    "require": {
-        "orchestra/imagine": "^4.0"
-    }
-}
-```
-
-And then run `composer install` from the terminal.
-
-### Quick Installation
-
-Above installation can also be simplify by using the following command:
-
-    composer require "orchestra/imagine=^4.0"
+    composer require "orchestra/imagine"
 
 ## Configuration
 
