@@ -1,6 +1,6 @@
 {
     "name": "orchestra/imagine",
-    "description": "Imagine (Wrapper) Component for Laravel 5",
+    "description": "Imagine (Wrapper) Component for Laravel",
     "keywords": ["orchestra-platform", "orchestral", "laravel", "image-manipulation", "image"],
     "license": "MIT",
     "authors": [
