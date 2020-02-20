@@ -2,7 +2,6 @@ dist: bionic
 language: php
 
 php:
-  - 7.2
   - 7.3
   - 7.4
 
@@ -49,7 +48,7 @@ after_script:
 
 matrix:
   include:
-    - php: 7.2
+    - php: 7.3
       env: setup=coveralls coverage=yes IMAGINE_DRIVER=imagick
   allow_failures:
     - php: nightly
