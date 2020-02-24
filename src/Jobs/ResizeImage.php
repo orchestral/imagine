@@ -9,11 +9,6 @@ class ResizeImage extends Generator
 {
     /**
      * Handle image manipulation.
-     *
-     * @param  \Imagine\Image\ImageInterface  $image
-     * @param  array  $data
-     *
-     * @return \Imagine\Image\ImageInterface
      */
     protected function handleImageManipulation(ImageInterface $image, array $data): ImageInterface
     {
@@ -29,8 +24,6 @@ class ResizeImage extends Generator
 
     /**
      * Get default options.
-     *
-     * @return array
      */
     protected function getDefaultOptions(): array
     {

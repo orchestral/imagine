@@ -14,8 +14,6 @@ class ImagineManager extends Manager
 
     /**
      * Create an instance of the GD driver.
-     *
-     * @return \Imagine\Gd\Imagine
      */
     protected function createGdDriver(): Gd
     {
@@ -24,8 +22,6 @@ class ImagineManager extends Manager
 
     /**
      * Create an instance of the Gmagick driver.
-     *
-     * @return \Imagine\Gmagick\Imagine
      */
     protected function createGmagickDriver(): Gmagick
     {
@@ -34,8 +30,6 @@ class ImagineManager extends Manager
 
     /**
      * Create an instance of the Imagick driver.
-     *
-     * @return \Imagine\Imagick\Imagine
      */
     protected function createImagickDriver(): Imagick
     {

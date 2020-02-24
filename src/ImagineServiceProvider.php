@@ -30,8 +30,6 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
 
     /**
      * Register the core class aliases in the container.
-     *
-     * @return void
      */
     protected function registerCoreContainerAliases(): void
     {
@@ -60,10 +58,6 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
 
     /**
      * Boot using Laravel setup.
-     *
-     * @param  string  $path
-     *
-     * @return void
      */
     protected function bootUsingLaravel(string $path): void
     {
