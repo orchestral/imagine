@@ -18,8 +18,6 @@ abstract class Generator extends Job
 
     /**
      * Construct a new Job.
-     *
-     * @param  array  $options
      */
     public function __construct(array $options)
     {
@@ -28,8 +26,6 @@ abstract class Generator extends Job
 
     /**
      * Execute the job.
-     *
-     * @param \Imagine\Image\ImagineInterface $imagine
      *
      * @return void
      */
@@ -49,8 +45,6 @@ abstract class Generator extends Job
     /**
      * Get filtered options.
      *
-     * @param  array  $options
-     *
      * @return array
      */
     protected function getFilteredOptions(array $options)
@@ -69,18 +63,11 @@ abstract class Generator extends Job
 
     /**
      * Handle image manipulation.
-     *
-     * @param  \Imagine\Image\ImageInterface  $image
-     * @param  array  $data
-     *
-     * @return \Imagine\Image\ImageInterface
      */
     abstract protected function handleImageManipulation(ImageInterface $image, array $data): ImageInterface;
 
     /**
      * Get default options.
-     *
-     * @return array
      */
     abstract protected function getDefaultOptions(): array;
 }
