@@ -3,19 +3,11 @@ Imagine (Wrapper) Component for Laravel
 
 Imagine (Wrapper) Component is a Laravel package wrapper for [Imagine](https://github.com/avalanche123/Imagine).
 
-[![Build Status](https://travis-ci.org/orchestral/imagine.svg?branch=master)](https://travis-ci.org/orchestral/imagine)
+[![tests](https://github.com/orchestral/imagine/workflows/tests/badge.svg?branch=6.x)](https://github.com/orchestral/imagine/actions?query=workflow%3Atests+branch%3A6.x)
 [![Latest Stable Version](https://poser.pugx.org/orchestra/imagine/v/stable)](https://packagist.org/packages/orchestra/imagine)
 [![Total Downloads](https://poser.pugx.org/orchestra/imagine/downloads)](https://packagist.org/packages/orchestra/imagine)
 [![Latest Unstable Version](https://poser.pugx.org/orchestra/imagine/v/unstable)](//packagist.org/packages/orchestra/imagine)
 [![License](https://poser.pugx.org/orchestra/imagine/license)](https://packagist.org/packages/orchestra/imagine)
-
-## Table of Content
-
-* [Version Compatibility](#version-compatibility)
-* [Installation](#installation)
-* [Configuration](#configuration)
-* [Usage](#usage)
-* [Changelog](https://github.com/orchestral/imagine/releases)
 
 ## Version Compatibility
 
@@ -27,6 +19,7 @@ Laravel    | Imagine
  5.8.x     | 3.8.x
  6.x       | 4.x
  7.x       | 5.x
+ 8.x       | 6.x
 
 ## Installation
 
