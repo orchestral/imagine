@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": "^7.3 || ^8.0",
         "imagine/imagine": "^1.2",
         "orchestra/support-core": "^6.0",
         "orchestra/support-providers": "^6.0"
