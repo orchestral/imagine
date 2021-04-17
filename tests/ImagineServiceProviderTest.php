@@ -72,16 +72,16 @@ class ImagineServiceProviderTest extends TestCase
 
     public function usesGdDriver($app)
     {
-        $app['config']->set('orchestra.imagine', ['driver' => 'gd']);
+        $app['orchestra.imagine']->setDefaultDriver('driver', 'gd');
     }
 
     public function usesImagickDriver($app)
     {
-        $app['config']->set('orchestra.imagine', ['driver' => 'imagick']);
+        $app['orchestra.imagine']->setDefaultDriver('driver', 'imagick');
     }
 
     public function usesGmagickDriver($app)
     {
-        $app['config']->set('orchestra.imagine', ['driver' => 'gmagick']);
+        $app['orchestra.imagine']->setDefaultDriver('driver', 'gmagick');
     }
 }

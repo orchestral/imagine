@@ -17,15 +17,8 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
     public function register()
     {
         $this->app->singleton('orchestra.imagine', function (Container $app) {
-            $manager = new ImagineManager($app);
-            $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
-
-            $manager->setConfiguration($app->make('config')->get($namespace));
-
-            return $manager;
+            return new ImagineManager($app);
         });
-
-        $this->registerCoreContainerAliases();
     }
 
     /**
@@ -33,6 +26,12 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
      */
     protected function registerCoreContainerAliases(): void
     {
+        $this->callAfterResolving('orchestra.imagine', function ($manager, $app) {
+            $namespace = $this->hasPackageRepository() ? 'orchestra/imagine::' : 'orchestra.imagine';
+
+            $manager->setConfiguration($app->make('config')->get($namespace));
+        });
+
         $this->app->alias('orchestra.imagine', ImagineManager::class);
 
         $this->app->bind(ImagineInterface::class, static function (Container $app) {
@@ -54,6 +53,8 @@ class ImagineServiceProvider extends ServiceProvider implements DeferrableProvid
         if (! $this->hasPackageRepository()) {
             $this->bootUsingLaravel($path);
         }
+
+        $this->registerCoreContainerAliases();
     }
 
     /**
