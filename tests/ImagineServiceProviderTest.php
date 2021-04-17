@@ -3,7 +3,6 @@
 namespace Orchestra\Imagine\Tests;
 
 use Illuminate\Container\Container;
-use Mockery as m;
 use Orchestra\Imagine\ImagineServiceProvider;
 use Orchestra\Testbench\TestCase;
 
@@ -29,6 +28,7 @@ class ImagineServiceProviderTest extends TestCase
 
     /**
      * @test
+     * @define-env usesGdDriver
      * @requires extension gd
      */
     public function it_can_boot_using_gd()
@@ -40,6 +40,7 @@ class ImagineServiceProviderTest extends TestCase
 
     /**
      * @test
+     * @define-env usesImagickDriver
      * @requires extension imagick
      */
     public function it_can_boot_using_imagick()
@@ -51,6 +52,7 @@ class ImagineServiceProviderTest extends TestCase
 
     /**
      * @test
+     * @define-env usesGmagickDriver
      * @requires extension gmagick
      */
     public function it_can_boot_using_gmagick()
@@ -66,5 +68,20 @@ class ImagineServiceProviderTest extends TestCase
         $app = new Container();
 
         $this->assertContains('orchestra.imagine', with(new ImagineServiceProvider($app))->provides());
+    }
+
+    public function usesGdDriver($app)
+    {
+        $app['config']->set('orchestra.imagine', ['driver' => 'gd']);
+    }
+
+    public function usesImagickDriver($app)
+    {
+        $app['config']->set('orchestra.imagine', ['driver' => 'imagick']);
+    }
+
+    public function usesGmagickDriver($app)
+    {
+        $app['config']->set('orchestra.imagine', ['driver' => 'gmagick']);
     }
 }
